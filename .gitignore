@@ -1,11 +1,13 @@
 # Godot 4+ specific ignores
 .godot/
 .nomedia
+.editorconfig
 
 # Godot-specific ignores
 .import/
 export.cfg
 export_credentials.cfg
+export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
