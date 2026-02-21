@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://76py7bgdj0nb"]
+
+[ext_resource type="Script" uid="uid://c2dcv5sooldcd" path="res://Scripts/pause_menu.gd" id="1_7ffh8"]
+
+[node name="PauseMenu" type="Control" unique_id=1779303702]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ffh8")
+title_menu_scene = "uid://cadywn7bisd2v"
+
+[node name="Shadow_Panel" type="Panel" parent="." unique_id=727792152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Holder_ColorRect" type="ColorRect" parent="." unique_id=1916418654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -63.0
+offset_right = 100.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14702421, 0.14711371, 0.20062512, 1)
+
+[node name="Title" type="RichTextLabel" parent="Holder_ColorRect" unique_id=1056283349]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 7.25
+offset_bottom = 42.75
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[b]PAUSA[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Holder_ColorRect" unique_id=1159188792]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -76.0
+offset_right = 88.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="Resume_Button" type="Button" parent="Holder_ColorRect/VBoxContainer" unique_id=985602131]
+layout_mode = 2
+text = "Retomar"
+
+[node name="TitleScreen_Button" type="Button" parent="Holder_ColorRect/VBoxContainer" unique_id=1085993808]
+layout_mode = 2
+text = "Voltar à Tela de Título"
+
+[connection signal="pressed" from="Holder_ColorRect/VBoxContainer/Resume_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Holder_ColorRect/VBoxContainer/TitleScreen_Button" to="." method="_on_title_screen_button_pressed"]

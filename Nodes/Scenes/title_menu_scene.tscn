@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://cadywn7bisd2v"]
+
+[ext_resource type="Script" uid="uid://b18w17ism1t1u" path="res://Scripts/title_menu_scene.gd" id="1_q6vkm"]
+[ext_resource type="Script" uid="uid://cke511qrm5yyd" path="res://Scripts/credits_popup.gd" id="3_flkoa"]
+[ext_resource type="Shortcut" uid="uid://cone2ur3q4uby" path="res://Shortcuts/back_shortcut.tres" id="4_anpos"]
+
+[node name="TitleMenuScene" type="Control" unique_id=1122809056]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_q6vkm")
+game_scene = "uid://2d6qrm0nmwjw"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1171718256]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.75
+offset_top = 144.0
+offset_right = 286.75
+offset_bottom = 265.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 95
+bbcode_enabled = true
+text = "[u]Gambá Core[/u]"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=68658985]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -118.0
+offset_top = -229.0
+offset_right = 118.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="Play_Button" type="Button" parent="VBoxContainer" unique_id=1223189946]
+layout_mode = 2
+text = "Jogar!"
+
+[node name="Credits_Button" type="Button" parent="VBoxContainer" unique_id=1763515513]
+layout_mode = 2
+text = "Créditos"
+
+[node name="Quit_Button" type="Button" parent="VBoxContainer" unique_id=2121367315]
+layout_mode = 2
+text = "Sair"
+
+[node name="Créditos" type="Control" parent="." unique_id=2054660805]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_flkoa")
+
+[node name="Shadow_Panel" type="Panel" parent="Créditos" unique_id=125227982]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Holder_ColorRect" type="ColorRect" parent="Créditos" unique_id=1529917500]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -250.0
+offset_right = 231.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14702421, 0.14711371, 0.20062512, 1)
+
+[node name="Title" type="RichTextLabel" parent="Créditos/Holder_ColorRect" unique_id=1079020961]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 7.25
+offset_bottom = 42.75
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[b]CRÉDITOS[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="People_Credits" type="RichTextLabel" parent="Créditos/Holder_ColorRect" unique_id=1785628883]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04822695
+anchor_top = 0.096
+anchor_right = 0.5315985
+anchor_bottom = 0.902
+grow_vertical = 2
+bbcode_enabled = true
+text = "[u]Arte[/u]
+Fernanda \"Fields\" Campos
+Rayssa Moreira
+Sophia \"aquela\" Rehem
+
+[u]Animação[/u]
+Rayssa Moreira
+
+[u]Sound Design[/u]
+Fernanda \"Fields\" Campos
+
+[u]Game Design[/u]
+Fernanda \"Fields\" Campos
+Sam Cavalheiro
+
+[u]Programação[/u]
+Sam Cavalheiro"
+scroll_active = false
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="License_Credits" type="RichTextLabel" parent="Créditos/Holder_ColorRect" unique_id=1334463027]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.54460967
+anchor_top = 0.096
+anchor_right = 0.9703604
+anchor_bottom = 0.902
+grow_vertical = 2
+bbcode_enabled = true
+text = "(Crédito das licenças)"
+scroll_active = false
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Back_Button" type="Button" parent="Créditos/Holder_ColorRect" unique_id=1215367911]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -42.0
+offset_right = 27.5
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+shortcut = ExtResource("4_anpos")
+text = "Voltar"
+
+[connection signal="pressed" from="VBoxContainer/Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits_Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Créditos/Holder_ColorRect/Back_Button" to="Créditos" method="_on_back_button_pressed"]

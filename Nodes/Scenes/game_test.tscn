@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://2d6qrm0nmwjw"]
+
+[ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="1_5trqm"]
+[ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="1_m516x"]
+[ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/pause_menu.tscn" id="1_u8xdv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4148v"]
+sky_material = SubResource("ProceduralSkyMaterial_ue6s0")
+
+[sub_resource type="Environment" id="Environment_nduah"]
+background_mode = 2
+sky = SubResource("Sky_4148v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ue6s0"]
+size = Vector3(2, 1, 2)
+
+[node name="GameTestScene" type="Node3D" unique_id=1234912434]
+
+[node name="PauseMenu" parent="." unique_id=1779303702 instance=ExtResource("1_u8xdv")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=288717097]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1866068959]
+environment = SubResource("Environment_nduah")
+
+[node name="Chão" type="MeshInstance3D" parent="." unique_id=1365335009]
+transform = Transform3D(2.9475384, 0, 0, 0, 1, 0, 0, 0, 2.4662971, 0, 0, 0)
+mesh = SubResource("PlaneMesh_noarx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Chão" unique_id=407008456]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chão/StaticBody3D" unique_id=2056964285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ue6s0")
+
+[node name="CameraFollower" parent="." unique_id=444914822 node_paths=PackedStringArray("follow_object") instance=ExtResource("1_5trqm")]
+follow_object = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1625356180 instance=ExtResource("1_m516x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19491106, 0)

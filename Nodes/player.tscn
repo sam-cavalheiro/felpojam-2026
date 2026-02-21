@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bd8ef6jr5wmvs"]
+
+[ext_resource type="Texture2D" uid="uid://6r654wdcwqk" path="res://Images/gamba_placeholder.jpg" id="1_aoxlc"]
+[ext_resource type="Script" uid="uid://c1ukagcm7l4vb" path="res://Scripts/player.gd" id="1_qlfej"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aoxlc"]
+radius = 0.24304199
+height = 0.48608398
+
+[node name="Player" type="CharacterBody3D" unique_id=1625356180]
+script = ExtResource("1_qlfej")
+speed = 2.5
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1658264212]
+transform = Transform3D(0.11097625, 0, 0, 0, 0.11097625, 0, 0, 0, 0.11097625, 0, 0, 0)
+texture = ExtResource("1_aoxlc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1633106118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.024923027, 0)
+shape = SubResource("CapsuleShape3D_aoxlc")
