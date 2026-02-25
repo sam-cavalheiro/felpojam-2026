@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://bd8ef6jr5wmvs"]
 
-[ext_resource type="Texture2D" uid="uid://6r654wdcwqk" path="res://Images/gamba_placeholder.jpg" id="1_aoxlc"]
 [ext_resource type="Script" uid="uid://c1ukagcm7l4vb" path="res://Scripts/player.gd" id="1_qlfej"]
+[ext_resource type="SpriteFrames" uid="uid://bp1bgtx56v04v" path="res://SpriteFrames/gamba_sprite_frames.tres" id="3_pie2b"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aoxlc"]
-radius = 0.24304199
-height = 0.48608398
+[sub_resource type="SphereShape3D" id="SphereShape3D_pie2b"]
+radius = 3.5771585
 
 [node name="Player" type="CharacterBody3D" unique_id=1625356180]
+transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 0, 0, 0)
 script = ExtResource("1_qlfej")
 speed = 2.5
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1658264212]
-transform = Transform3D(0.11097625, 0, 0, 0, 0.11097625, 0, 0, 0, 0.11097625, 0, 0, 0)
-texture = ExtResource("1_aoxlc")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1633106118]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.024923027, 0)
-shape = SubResource("CapsuleShape3D_aoxlc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48934954, 0)
+shape = SubResource("SphereShape3D_pie2b")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1860530507]
+billboard = 1
+sprite_frames = ExtResource("3_pie2b")
+animation = &"idle"
+autoplay = "idle"
