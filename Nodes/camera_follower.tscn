@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bp2ysnggsm1md" path="res://Scripts/camera_follower.gd" id="1_umjx8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umjx8"]
+albedo_color = Color(1, 0, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_umjx8"]
 
 [node name="CameraFollower" type="Node3D" unique_id=444914822]
@@ -10,9 +13,10 @@ follow_speed = 1.5
 max_follow_distance = 0.6
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1115332085]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 0.47715876, 0.87881714, 0, -0.87881714, 0.47715876, 0, 0.95, 0.4)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2135865168]
 transform = Transform3D(0.41480768, 0, 0, 0, 0.41480768, 0, 0, 0, 0.41480768, 0, 0, 0)
 visible = false
+material_override = SubResource("StandardMaterial3D_umjx8")
 mesh = SubResource("BoxMesh_umjx8")
