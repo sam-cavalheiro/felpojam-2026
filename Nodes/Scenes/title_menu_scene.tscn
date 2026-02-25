@@ -14,7 +14,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_q6vkm")
-game_scene = "uid://2d6qrm0nmwjw"
+game_scene = "uid://c3063n0it3fv2"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1171718256]
 layout_mode = 1
@@ -28,8 +28,9 @@ offset_bottom = 265.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 95
 bbcode_enabled = true
-text = "[u]Gambá Core[/u]"
+text = "[u]Carimbá[/u]"
 scroll_active = false
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=68658985]
 clip_contents = true
@@ -116,23 +117,22 @@ anchor_right = 0.5315985
 anchor_bottom = 0.902
 grow_vertical = 2
 bbcode_enabled = true
-text = "[u]Arte[/u]
-Fernanda \"Fields\" Campos
-Rayssa Moreira
-Sophia \"aquela\" Rehem
+text = "[u]Animação[/u]
+Rayssa \"Valkyray\" Moreira
 
-[u]Animação[/u]
-Rayssa Moreira
-
-[u]Sound Design[/u]
+[u]Arte[/u]
 Fernanda \"Fields\" Campos
+Rayssa \"Valkyray\" Moreira
+Sophia \"Sophiaquela\" Rehem
 
 [u]Game Design[/u]
 Fernanda \"Fields\" Campos
-Sam Cavalheiro
 
 [u]Programação[/u]
-Sam Cavalheiro"
+Sam Cavalheiro
+
+[u]Sound Design[/u]
+Fernanda \"Fields\" Campos"
 scroll_active = false
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
