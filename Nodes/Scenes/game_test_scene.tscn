@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="1_5trqm"]
 [ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="1_m516x"]
 [ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/pause_menu.tscn" id="1_u8xdv"]
+[ext_resource type="Texture2D" uid="uid://bualoxgeg7lup" path="res://Images/arvore.png" id="4_vfq78"]
+[ext_resource type="Texture2D" uid="uid://8ganr4tg5r75" path="res://Images/Arvore-tipo-2.png" id="5_ppsma"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -44,7 +46,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_ue6s0")
 
 [node name="CameraFollower" parent="." unique_id=444914822 node_paths=PackedStringArray("follow_object") instance=ExtResource("1_5trqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.673, -0.048561037, 0.21351552)
 follow_object = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1625356180 instance=ExtResource("1_m516x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19491106, 0)
+transform = Transform3D(0.04069717, 0, 0, 0, 0.04069717, 0, 0, 0, 0.04069717, 1.673, 0.09843896, 0.21351552)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=331097311]
+transform = Transform3D(0.115716964, 0, 0, 0, 0.115716964, 0, 0, 0, 0.115716964, -1.510849, 0.43728137, 0)
+billboard = 1
+texture = ExtResource("4_vfq78")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1299404394]
+transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 2.2157753, 0.4613825, 0)
+billboard = 1
+texture = ExtResource("5_ppsma")
