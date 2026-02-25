@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://c3063n0it3fv2"]
+
+[ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/pause_menu.tscn" id="1_d8vp1"]
+[ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="2_8dm7f"]
+[ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="3_uy17q"]
+[ext_resource type="Texture2D" uid="uid://bualoxgeg7lup" path="res://Images/arvore.png" id="4_ygu2w"]
+[ext_resource type="Texture2D" uid="uid://8ganr4tg5r75" path="res://Images/Arvore-tipo-2.png" id="5_jlrqf"]
+[ext_resource type="Texture2D" uid="uid://baub0qq061sgj" path="res://Images/Props/level_1/template.jpg" id="6_8dm7f"]
+[ext_resource type="PackedScene" uid="uid://dktk0dwo0r6l" path="res://Nodes/Props/Level1/barraquinha_a.tscn" id="7_68srt"]
+[ext_resource type="PackedScene" uid="uid://b1nx03gldx7v" path="res://Nodes/Props/Level1/barraquinha_b.tscn" id="8_fk0xi"]
+[ext_resource type="PackedScene" uid="uid://b6x7yfdat0e7w" path="res://Nodes/Props/Level1/poste.tscn" id="9_q1ivr"]
+[ext_resource type="PackedScene" uid="uid://clbr110tgirem" path="res://Nodes/Props/Level1/cadeira_a.tscn" id="10_68srt"]
+[ext_resource type="PackedScene" uid="uid://dymuhck2bcu5l" path="res://Nodes/Props/Level1/cadeira_b.tscn" id="11_68srt"]
+[ext_resource type="PackedScene" uid="uid://jmxskqt1riao" path="res://Nodes/Props/Level1/arvore_a.tscn" id="12_q1ivr"]
+[ext_resource type="PackedScene" uid="uid://bebtaw2xclv2w" path="res://Nodes/Props/Level1/arvore_b.tscn" id="13_j6a3u"]
+[ext_resource type="PackedScene" uid="uid://wtaklua6jp00" path="res://Nodes/Props/Level1/lixeira.tscn" id="14_0ild8"]
+[ext_resource type="PackedScene" uid="uid://cmfrfxryx1fle" path="res://Nodes/Props/Level1/arbusto_a.tscn" id="15_v7cvq"]
+[ext_resource type="PackedScene" uid="uid://05gp78i0ibqj" path="res://Nodes/Props/Level1/arbusto_b.tscn" id="16_b75lc"]
+[ext_resource type="PackedScene" uid="uid://ccg1r5vucecya" path="res://Nodes/Props/Level1/arvore_topo.tscn" id="17_v7cvq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4148v"]
+sky_material = SubResource("ProceduralSkyMaterial_ue6s0")
+
+[sub_resource type="Environment" id="Environment_nduah"]
+background_mode = 2
+sky = SubResource("Sky_4148v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ild8"]
+albedo_color = Color(0.42352942, 0.6431373, 0.32941177, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ue6s0"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7cvq"]
+size = Vector3(1.0821533, 1, 3.0136108)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b75lc"]
+size = Vector3(1.0903931, 1, 3.0136108)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ew023"]
+size = Vector3(1, 1, 4.9043884)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vfken"]
+size = Vector3(1, 1, 5.8397675)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36iw2"]
+size = Vector3(1, 1, 5.8397675)
+
+[node name="Level1" type="Node3D" unique_id=1234912434]
+
+[node name="PauseMenu" parent="." unique_id=1779303702 instance=ExtResource("1_d8vp1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=288717097]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1866068959]
+environment = SubResource("Environment_nduah")
+
+[node name="Chão" type="MeshInstance3D" parent="." unique_id=1365335009]
+transform = Transform3D(15.434753, 0, 0, 0, 1, 0, 0, 0, 12.317918, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0ild8")
+mesh = SubResource("PlaneMesh_noarx")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Chão" unique_id=407008456]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chão/StaticBody3D" unique_id=2056964285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ue6s0")
+
+[node name="CameraFollower" parent="." unique_id=444914822 node_paths=PackedStringArray("follow_object") instance=ExtResource("2_8dm7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6049035, 0.09843896, -0.27893645)
+follow_object = NodePath("../Player")
+enable_min_x_boundaries = true
+min_x_boundaries = -2.429
+enable_min_z_boundaries = true
+min_z_boundaries = -2.113
+
+[node name="Player" parent="." unique_id=1625356180 instance=ExtResource("3_uy17q")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, 0.6049035, 0.09843896, -0.27893645)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=331097311]
+transform = Transform3D(0.115716964, 0, 0, 0, 0.115716964, 0, 0, 0, 0.115716964, -1.510849, 0.43728137, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_ygu2w")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1299404394]
+transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 2.2157753, 0.4613825, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_jlrqf")
+
+[node name="Props" type="Node3D" parent="." unique_id=905399719]
+
+[node name="Template" type="Sprite3D" parent="Props" unique_id=719499958]
+transform = Transform3D(0.201, 0, 0, 0, -8.785989e-09, 0.201, 0, -0.201, -8.785989e-09, 0, 0, 0)
+visible = false
+modulate = Color(1, 0.50980395, 0.5137255, 1)
+texture = ExtResource("6_8dm7f")
+
+[node name="Barraquinha A1" parent="Props" unique_id=1565573672 instance=ExtResource("7_68srt")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.875, 0, -0.4)
+
+[node name="Barraquinha A2" parent="Props" unique_id=301253970 instance=ExtResource("7_68srt")]
+transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, 0.387, 0, -1.297)
+
+[node name="Barraquinha A3" parent="Props" unique_id=1221282639 instance=ExtResource("7_68srt")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 1.454, 0, 0.572)
+
+[node name="Barraquinha A4" parent="Props" unique_id=1167565660 instance=ExtResource("7_68srt")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 2.145, 0, 0.646)
+
+[node name="Barraquinha B1" parent="Props" unique_id=1890521803 instance=ExtResource("8_fk0xi")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 1.9517658, 0.0042817593, -0.080516756)
+
+[node name="Barraquinha B2" parent="Props" unique_id=1451729156 instance=ExtResource("8_fk0xi")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.796, 0, -0.891)
+metadata/_edit_group_ = true
+
+[node name="Poste1" parent="Props" unique_id=460255395 instance=ExtResource("9_q1ivr")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -0.553, 0, 0.557)
+
+[node name="Poste2" parent="Props" unique_id=1677378233 instance=ExtResource("9_q1ivr")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -2.981, 0, -1.009)
+
+[node name="Poste3" parent="Props" unique_id=818389138 instance=ExtResource("9_q1ivr")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -0.239, 0, -1.416)
+
+[node name="Poste4" parent="Props" unique_id=1320450284 instance=ExtResource("9_q1ivr")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 2.3527603, -0.012943804, -0.32955462)
+
+[node name="Poste5" parent="Props" unique_id=2014067017 instance=ExtResource("9_q1ivr")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 1.001, 0, -1.797)
+
+[node name="CadeiraA1" parent="Props" unique_id=228483201 instance=ExtResource("10_68srt")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -0.3858471, 0, -0.12030068)
+
+[node name="CadeiraA2" parent="Props" unique_id=2044485369 instance=ExtResource("10_68srt")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.3663313, 0, -1.1400754)
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" parent="Props/CadeiraA2" index="0" unique_id=1907927085]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 2.3700204, 0)
+flip_h = true
+
+[node name="Sprite3D2" parent="Props/CadeiraA2" index="1" unique_id=656745764]
+flip_h = true
+
+[node name="CadeiraB" parent="Props" unique_id=964210932 instance=ExtResource("11_68srt")]
+transform = Transform3D(0.096, 0, 0, 0, 0.045807242, 0.08436645, 0, -0.08436645, 0.045807242, -0.41250747, 0, -1.3878838)
+
+[node name="ArvoreA1" parent="Props" unique_id=1921031229 instance=ExtResource("12_q1ivr")]
+transform = Transform3D(0.096, 0, 0, 0, 0.045807242, 0.08436645, 0, -0.08436645, 0.045807242, -1.126, 0, -1.615)
+
+[node name="ArvoreA2" parent="Props" unique_id=1312530644 instance=ExtResource("12_q1ivr")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, -0.97, 0, 1.231)
+
+[node name="ArvoreA3" parent="Props" unique_id=944712680 instance=ExtResource("12_q1ivr")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, 0.588, 0, 0.601)
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" parent="Props/ArvoreA3" index="0" unique_id=1220244669]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 1.0041605, 4.373873, 0)
+flip_h = true
+render_priority = 3
+
+[node name="Sprite3D2" parent="Props/ArvoreA3" index="1" unique_id=663323105]
+flip_h = true
+
+[node name="ArvoreB1" parent="Props" unique_id=176717760 instance=ExtResource("13_j6a3u")]
+transform = Transform3D(0.101, 0, 0, 0, 0.04819304, 0.08876054, 0, -0.08876054, 0.04819304, -2.1772542, 0, 0.64800394)
+
+[node name="ArvoreB2" parent="Props" unique_id=1338627081 instance=ExtResource("13_j6a3u")]
+transform = Transform3D(-0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -2.090121, 0, -1.3301775)
+metadata/_edit_group_ = true
+
+[node name="ArvoreB3" parent="Props" unique_id=590520847 instance=ExtResource("13_j6a3u")]
+transform = Transform3D(-0.086, 0, 0, 0, 0.041035656, 0.07557828, 0, -0.07557828, 0.041035656, 1.699, 0, 1.837)
+
+[node name="ArvoreB4" parent="Props" unique_id=467333100 instance=ExtResource("13_j6a3u")]
+transform = Transform3D(0.086, 0, 0, 0, 0.041035656, 0.07557828, 0, -0.07557828, 0.041035656, 0.47225404, 0, -0.6322008)
+
+[node name="Lixeira" parent="Props" unique_id=1028439843 instance=ExtResource("14_0ild8")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0.952, 0, -0.239)
+
+[node name="ArbustoA1" parent="Props" unique_id=2015676469 instance=ExtResource("15_v7cvq")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -0.18249631, 0, 0.7838566)
+
+[node name="ArbustoA2" parent="Props" unique_id=2119362480 instance=ExtResource("15_v7cvq")]
+transform = Transform3D(0.076, 0, 0, 0, 0.036264066, 0.066790104, 0, -0.066790104, 0.036264066, -0.8174647, 0, -1.3384205)
+
+[node name="ArbustoB" parent="Props" unique_id=2082339884 instance=ExtResource("16_b75lc")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0.39163923, 0, -0.3268963)
+
+[node name="ArvoreTopo" parent="Props" unique_id=2016788640 instance=ExtResource("17_v7cvq")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.0644367, 0, -2.790428)
+
+[node name="Colisões" type="Node3D" parent="." unique_id=480736553]
+
+[node name="Parede Invisível" type="StaticBody3D" parent="Colisões" unique_id=991114211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1293402, 0, -1.721137)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Colisões/Parede Invisível" unique_id=318302534]
+transform = Transform3D(0.95255005, 0, 0.30438226, 0, 1, 0, -0.30438226, 0, 0.95255005, -0.7613039, 0, 1.2128786)
+shape = SubResource("BoxShape3D_v7cvq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Colisões/Parede Invisível" unique_id=1076200614]
+transform = Transform3D(0.9392022, 0, 0.34336466, 0, 1, 0, -0.34336466, 0, 0.9392022, 0.08931136, 2.3841858e-07, 3.6901057)
+shape = SubResource("BoxShape3D_b75lc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Colisões/Parede Invisível" unique_id=1598608778]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.7559776, 2.3841858e-07, -1.4171815)
+shape = SubResource("BoxShape3D_ew023")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Colisões/Parede Invisível" unique_id=1504555293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7406006, 2.3841858e-07, 1.9414895)
+shape = SubResource("BoxShape3D_vfken")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Colisões/Parede Invisível" unique_id=2135193728]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.727977, 2.3841858e-07, 4.647273)
+shape = SubResource("BoxShape3D_36iw2")
+
+[editable path="CameraFollower"]
+[editable path="Props/CadeiraA2"]
+[editable path="Props/ArvoreA3"]
