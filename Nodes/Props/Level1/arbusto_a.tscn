@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cmfrfxryx1fle"]
+
+[ext_resource type="Texture2D" uid="uid://bkw1w656g4uin" path="res://Images/Props/level_1/arbusto-tipo-1.png" id="1_anmmq"]
+
+[node name="ArbustoA" type="Node3D" unique_id=761955766]
+transform = Transform3D(0.655, 0, 0, 0, 0.655, 0, 0, 0, 0.655, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1441454348]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.72513366, 0)
+texture = ExtResource("1_anmmq")

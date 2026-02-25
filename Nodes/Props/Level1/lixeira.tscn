@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://wtaklua6jp00"]
+
+[ext_resource type="Texture2D" uid="uid://c76xaena8iqmn" path="res://Images/Props/level_1/lixeira.png" id="1_6vi55"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6vi55"]
+radius = 1.1137002
+
+[node name="Lixeira" type="StaticBody3D" unique_id=805789920]
+transform = Transform3D(0.655, 0, 0, 0, 0.655, 0, 0, 0, 0.655, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=871014243]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 1.4210833, 0)
+texture = ExtResource("1_6vi55")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=169162710]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.05232396, 1.3708496, -0.27060473)
+shape = SubResource("SphereShape3D_6vi55")

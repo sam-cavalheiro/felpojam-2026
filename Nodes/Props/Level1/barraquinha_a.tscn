@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dktk0dwo0r6l"]
+
+[ext_resource type="Texture2D" uid="uid://chievky4a37hj" path="res://Images/Props/level_1/barraquinha-tipo-1.png" id="1_ytjsp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ytjsp"]
+size = Vector3(4.5144043, 2.7749634, 3.2016602)
+
+[node name="Barraquinha A" type="StaticBody3D" unique_id=1914796345]
+transform = Transform3D(0.541, 0, 0, 0, 0.541, 0, 0, 0, 0.541, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1722188358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.365407, 0)
+render_priority = 2
+texture = ExtResource("1_ytjsp")
+region_enabled = true
+region_rect = Rect2(0, 0, 614, 359)
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1193665694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1575313, 0)
+texture = ExtResource("1_ytjsp")
+region_enabled = true
+region_rect = Rect2(0, 359, 614, 284)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1017888170]
+transform = Transform3D(0.8668011, 0.49865422, 0, -0.49865422, 0.8668011, 0, 0, 0, 1, -0.22304207, 2.1935782, -1.2772428)
+shape = SubResource("BoxShape3D_ytjsp")

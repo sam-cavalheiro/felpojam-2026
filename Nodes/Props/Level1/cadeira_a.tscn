@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://clbr110tgirem"]
+
+[ext_resource type="Texture2D" uid="uid://db5rralgxgipr" path="res://Images/Props/level_1/banco-tipo-1.png" id="1_axf8u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_axf8u"]
+
+[node name="CadeiraA1" type="StaticBody3D" unique_id=942924498]
+transform = Transform3D(0.581, 0, 0, 0, 0.581, 0, 0, 0, 0.581, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1907927085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3700204, 0)
+texture = ExtResource("1_axf8u")
+region_enabled = true
+region_rect = Rect2(0, 0, 533, 151)
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=656745764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66747105, 0)
+texture = ExtResource("1_axf8u")
+region_enabled = true
+region_rect = Rect2(0, 151, 533, 191)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1772779378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8977399, 0.5779886, -0.21514632)
+shape = SubResource("SphereShape3D_axf8u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1640590956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4084538, 0.5779886, -0.14675753)
+shape = SubResource("SphereShape3D_axf8u")

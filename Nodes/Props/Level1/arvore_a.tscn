@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://jmxskqt1riao"]
+
+[ext_resource type="Texture2D" uid="uid://b7eixp1857kea" path="res://Images/Props/level_1/arvore-tipo-1.png" id="1_nfgjc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nfgjc"]
+radius = 1.778843
+
+[node name="ArvoreA" type="StaticBody3D" unique_id=1694716548]
+transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1220244669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0041605, 6.567198, 0)
+render_priority = 2
+texture = ExtResource("1_nfgjc")
+region_enabled = true
+region_rect = Rect2(0, 0, 1324, 810)
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=663323105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0041605, 1.1668388, 0)
+texture = ExtResource("1_nfgjc")
+region_enabled = true
+region_rect = Rect2(0, 810, 1324, 270)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1035705351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18235478, 1.0598541, -0.8417847)
+shape = SubResource("SphereShape3D_nfgjc")

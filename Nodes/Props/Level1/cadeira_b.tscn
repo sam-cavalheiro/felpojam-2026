@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dymuhck2bcu5l"]
+
+[ext_resource type="Texture2D" uid="uid://b8t6b2ipa1thv" path="res://Images/Props/level_1/banco-tipo-2.png" id="1_1am7l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1am7l"]
+size = Vector3(2.1918945, 1, 1)
+
+[node name="CadeiraB" type="StaticBody3D" unique_id=1527037347]
+transform = Transform3D(0.451, 0, 0, 0, 0.451, 0, 0, 0, 0.451, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1477724758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0109833, 0)
+texture = ExtResource("1_1am7l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=183726378]
+transform = Transform3D(0.8682941, 0.49604985, 0, -0.49604985, 0.8682941, 0, 0, 0, 1, -0.30874446, 0.6794707, -0.24512337)
+shape = SubResource("BoxShape3D_1am7l")

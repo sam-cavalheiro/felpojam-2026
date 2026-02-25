@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ccg1r5vucecya"]
+
+[ext_resource type="Texture2D" uid="uid://csqokwuscuf63" path="res://Images/Props/level_1/floresta topo mapa1.png" id="1_qtxbg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qtxbg"]
+size = Vector3(42.718147, 23.220184, 22.124847)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qtxbg"]
+height = 6.5375977
+radius = 10.141602
+
+[node name="ArvoreTopo" type="StaticBody3D" unique_id=504266183]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1074962080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.463849)
+texture = ExtResource("1_qtxbg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1441936555]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -40.471306, 0, 5.4638486)
+flip_h = true
+texture = ExtResource("1_qtxbg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1662955616]
+transform = Transform3D(0.9608224, 1.8626451e-08, 0.27715066, 0.24357611, 0.47713646, -0.8443478, -0.13225108, 0.8787758, 0.45844352, -4.4562783, 6.99104, 2.7523525)
+shape = SubResource("BoxShape3D_qtxbg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=318441726]
+transform = Transform3D(0.56356645, -0.7780033, -0.2775596, 0.24326013, 0.47740263, -0.84428805, 0.78944063, 0.40829337, 0.45830542, -38.20235, 5.944336, 3.3206651)
+shape = SubResource("BoxShape3D_qtxbg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1787964375]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.4771521, -0.8788047, 0, 0.8788047, 0.4771521, -17.35212, -1.3053255, 3.290362)
+shape = SubResource("CylinderShape3D_qtxbg")

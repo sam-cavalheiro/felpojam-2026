@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b1nx03gldx7v"]
+
+[ext_resource type="Texture2D" uid="uid://c6dxw0ipmb4js" path="res://Images/Props/level_1/barraquinha-tipo-2.png" id="1_mpeql"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpeql"]
+size = Vector3(4.5492554, 2.3930054, 1.949707)
+
+[node name="Barraquinha B1" type="StaticBody3D" unique_id=785454148]
+transform = Transform3D(0.571, 0, 0, 0, 0.571, 0, 0, 0, 0.571, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1282147514]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.38716, 4.1917257, 0)
+render_priority = 2
+texture = ExtResource("1_mpeql")
+region_enabled = true
+region_rect = Rect2(0, 0, 674, 341)
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=2010450187]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.38715994, 1.0579233, 0)
+texture = ExtResource("1_mpeql")
+region_enabled = true
+region_rect = Rect2(0, 341, 674, 289)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1081771430]
+transform = Transform3D(0.8832418, -0.46891627, 0, 0.46891627, 0.8832418, 0, 0, 0, 0.99999976, 0.0019438835, 2.0206282, -0.7427966)
+shape = SubResource("BoxShape3D_mpeql")
