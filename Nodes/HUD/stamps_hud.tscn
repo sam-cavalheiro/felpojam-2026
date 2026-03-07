@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfhi8khb8p6k7"]
 
-[ext_resource type="Script" uid="uid://d3tatxd73m83k" path="res://stamps_hud.gd" id="1_2io0h"]
+[ext_resource type="Script" uid="uid://d3tatxd73m83k" path="res://Scripts/stamps_hud.gd" id="1_2io0h"]
 
 [node name="StampsHUD" type="Control" unique_id=1697470788]
 process_mode = 3
