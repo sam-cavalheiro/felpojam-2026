@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://by0wmqpcekv6g"]
+
+[ext_resource type="Script" uid="uid://daelaxmy8wwdc" path="res://Scripts/laws_manager.gd" id="1_8xfto"]
+
+[node name="LawsManager" type="Node" unique_id=118781589]
+script = ExtResource("1_8xfto")
+max_law_id = 11

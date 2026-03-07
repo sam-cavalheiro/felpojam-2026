@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://dilk6llrogdp7"]
+
+[ext_resource type="PackedScene" uid="uid://kcfowtj7qal7" path="res://Nodes/HUD/game_hud.tscn" id="1_w87o0"]
+[ext_resource type="Material" uid="uid://ol48iwchpjhv" path="res://Materials/outdoor_material.tres" id="2_vhkie"]
+[ext_resource type="PackedScene" uid="uid://dtou7txs4ge3h" path="res://Nodes/camera_follower_indoor.tscn" id="3_lxy1u"]
+[ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="4_cxg56"]
+[ext_resource type="Texture2D" uid="uid://dbkb8hel6tmpw" path="res://Images/Props/Level3/template.jpg" id="5_lncqf"]
+[ext_resource type="PackedScene" uid="uid://bljlhw83ny287" path="res://Nodes/Props/arvore.tscn" id="6_lncqf"]
+[ext_resource type="PackedScene" uid="uid://3wtw5vow60kk" path="res://Nodes/Props/Level3/balcao_a.tscn" id="7_8mcry"]
+[ext_resource type="PackedScene" uid="uid://c0eg4h4xc5l8c" path="res://Nodes/Props/Level3/balcao_b.tscn" id="8_vhkie"]
+[ext_resource type="PackedScene" uid="uid://bfpc41bdn76h4" path="res://Nodes/Props/Level3/tapete_grande.tscn" id="9_7q5ch"]
+[ext_resource type="PackedScene" uid="uid://bvxd437xmalyc" path="res://Nodes/Props/elevador.tscn" id="10_or01u"]
+[ext_resource type="PackedScene" uid="uid://dkewglwjofnbm" path="res://Nodes/Props/tapete_elevador.tscn" id="11_or01u"]
+[ext_resource type="PackedScene" uid="uid://dvgrlxu0850fa" path="res://Nodes/Triggers/tv_event_trigger.tscn" id="12_0etwl"]
+[ext_resource type="PackedScene" uid="uid://byotdnj8i2ya2" path="res://Nodes/Props/Level3/quadro_a.tscn" id="14_vo0tk"]
+[ext_resource type="ArrayMesh" uid="uid://ctlimx5a1rutv" path="res://Models/Props/Level3/wall_level_3_4.obj" id="15_lxy1u"]
+[ext_resource type="PackedScene" uid="uid://ck067kgb4scim" path="res://Nodes/Props/Level3/quadro_b.tscn" id="15_tkjv8"]
+[ext_resource type="PackedScene" uid="uid://t3kf4w4i18ku" path="res://Nodes/Pickups/stamp_pickup_0.tscn" id="16_4b3sa"]
+[ext_resource type="Material" uid="uid://bbdf6rh5krq1i" path="res://Materials/indoor_floor_material.tres" id="16_lxy1u"]
+[ext_resource type="PackedScene" uid="uid://cwl5qim0sstnk" path="res://Nodes/Pickups/stamp_pickup_1.tscn" id="17_lxy1u"]
+[ext_resource type="PackedScene" uid="uid://bsvmpbllqfnff" path="res://Nodes/Pickups/stamp_pickup_2.tscn" id="18_5eqyc"]
+[ext_resource type="PackedScene" uid="uid://b063mceeip86h" path="res://Nodes/Pickups/stamp_pickup_3.tscn" id="19_ph1mv"]
+[ext_resource type="PackedScene" uid="uid://dwlpkiqgurvea" path="res://Nodes/Pickups/stamp_pickup_4.tscn" id="20_v2eyj"]
+[ext_resource type="PackedScene" uid="uid://dh2qx7eugcduc" path="res://Nodes/Pickups/stamp_pickup_5.tscn" id="21_pcunm"]
+[ext_resource type="PackedScene" uid="uid://n2f7mqrmkvuw" path="res://Nodes/Triggers/law_trigger.tscn" id="22_md78w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4148v"]
+sky_material = SubResource("ProceduralSkyMaterial_ue6s0")
+
+[sub_resource type="Environment" id="Environment_nduah"]
+background_mode = 2
+sky = SubResource("Sky_4148v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ue6s0"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hqawa"]
+data = PackedVector3Array(-0.2305, -1, -0.7837, -2.0749, -1, 0.2575, -0.2891, 1, -0.7087, -0.2891, 1, -0.7087, -2.0749, -1, 0.2575, -2.0749, 1, 0.2575, 2.271, -1, -0.0547, -0.2305, -1, -0.7837, 2.271, 1, -0.0547, 2.271, 1, -0.0547, -0.2305, -1, -0.7837, -0.2891, 1, -0.7087, 0.4535, -1, 1.2365999, -2.0749, -1, 0.2574, 2.271, -1, -0.0547, 2.271, -1, -0.0547, -2.0749, -1, 0.2574, -0.2305, -1, -0.7837)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hqawa"]
+size = Vector3(4.7684326, 1, 1)
+
+[sub_resource type="GDScript" id="GDScript_4b3sa"]
+resource_name = "embromation"
+script/source = "extends Area3D
+
+var can_end: bool
+
+
+func _ready() -> void:
+	LawsManager.on_approve_law.connect(on_approve_law)
+
+func on_approve_law(law_id: int) -> void:
+	can_end = true
+
+func _on_body_entered(body: Node3D) -> void:
+	if can_end && body is Player:
+		get_tree().change_scene_to_file(\"res://Nodes/Scenes/end_scene.tscn\")
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lxy1u"]
+radius = 0.665
+
+[node name="Level3" type="Node3D" unique_id=1234912434]
+
+[node name="GameHUD" parent="." unique_id=1834046072 instance=ExtResource("1_w87o0")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=288717097]
+transform = Transform3D(-0.86602545, -0.4925847, -0.08579265, 2.9802322e-08, -0.17158526, 0.98516935, -0.5000001, 0.8531817, 0.14859715, -2.5287805, 2.9199834, 4.3799753)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1866068959]
+environment = SubResource("Environment_nduah")
+
+[node name="ChãoFora" type="StaticBody3D" parent="." unique_id=407008456]
+transform = Transform3D(15.434753, 0, 0, 0, 1, 0, 0, 0, 12.317918, 0, 0, 0)
+
+[node name="Sprite3D" type="MeshInstance3D" parent="ChãoFora" unique_id=1365335009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+material_override = ExtResource("2_vhkie")
+mesh = SubResource("PlaneMesh_noarx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChãoFora" unique_id=2056964285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ue6s0")
+
+[node name="CameraFollowerIndoor" parent="." unique_id=444914822 node_paths=PackedStringArray("follow_object") instance=ExtResource("3_lxy1u")]
+follow_object = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1625356180 instance=ExtResource("4_cxg56")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.012209833, 0.09843896, 2.2088013)
+
+[node name="Props" type="Node3D" parent="." unique_id=905399719]
+
+[node name="Template" type="Sprite3D" parent="Props" unique_id=138082027]
+transform = Transform3D(0.485, 0, 0, 0, -2.1200023e-08, 0.485, 0, -0.485, -2.1200023e-08, 0.575, 0, 1.146)
+visible = false
+texture = ExtResource("5_lncqf")
+
+[node name="Arvore" parent="Props" unique_id=1884622307 instance=ExtResource("6_lncqf")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 1.1342063, 0.20703983, 2.706847)
+
+[node name="Arvore2" parent="Props" unique_id=416087799 instance=ExtResource("6_lncqf")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 3.2392058, 0.20703983, 1.1148441)
+
+[node name="Arvore3" parent="Props" unique_id=134684618 instance=ExtResource("6_lncqf")]
+transform = Transform3D(-0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0.22693923, 0.20703983, 0.28098297)
+
+[node name="BalcaoA" parent="Props" unique_id=1716028201 instance=ExtResource("7_8mcry")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.0333157, 0.23658979, 1.2869135)
+
+[node name="BalcaoB" parent="Props" unique_id=1510805526 instance=ExtResource("8_vhkie")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 1.9233524, 0.23464912, 2.108601)
+
+[node name="TapeteGrande" parent="Props" unique_id=840037073 instance=ExtResource("9_7q5ch")]
+transform = Transform3D(0.111, 0, 0, 0, -4.851964e-09, 0.111, 0, -0.111, -4.851964e-09, 0.59059924, 0, 1.4326047)
+
+[node name="Elevador" parent="Props" unique_id=955659371 instance=ExtResource("10_or01u")]
+transform = Transform3D(0.10654757, 0, -0.03112239, 0, 0.11099999, 0, 0.031122383, 0, 0.106547594, 2.0415246, 0.3381729, 0.412881)
+
+[node name="TapeteElevador" parent="Props" unique_id=717624540 instance=ExtResource("11_or01u")]
+transform = Transform3D(0.10653839, 0.031154005, 1.3617848e-09, 0, -4.851964e-09, 0.111, 0.031154005, -0.10653839, -4.656941e-09, 1.9550458, 1.1920929e-07, 0.4796753)
+
+[node name="TVEventTrigger" parent="Props" unique_id=294610580 instance=ExtResource("12_0etwl")]
+transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -1.163727, 0.5841709, 0.8860234)
+
+[node name="QuadroA" parent="Props" unique_id=2130869082 instance=ExtResource("14_vo0tk")]
+transform = Transform3D(0.10653839, 0, -0.031154001, 0, 0.111, 0, 0.031154001, 0, 0.10653839, 2.7635472, 0.5096165, 0.6252621)
+
+[node name="QuadroB" parent="Props" unique_id=1581651723 instance=ExtResource("15_tkjv8")]
+transform = Transform3D(0.09736322, 0, 0.053304806, 0, 0.110999994, 0, -0.053304806, 0, 0.09736322, -0.3455763, 0.61758256, 0.21281706)
+
+[node name="Paredes" type="StaticBody3D" parent="." unique_id=1706789046]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes" unique_id=245248705]
+transform = Transform3D(1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0.579, 1.6490264, 1.174)
+cast_shadow = 0
+mesh = ExtResource("15_lxy1u")
+surface_material_override/0 = ExtResource("16_lxy1u")
+surface_material_override/1 = ExtResource("16_lxy1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes" unique_id=531284259]
+transform = Transform3D(1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0.579, 1.6490264, 1.174)
+shape = SubResource("ConcavePolygonShape3D_hqawa")
+
+[node name="Colisores" type="Node3D" parent="." unique_id=480736553]
+
+[node name="Parede Invisível" type="StaticBody3D" parent="Colisores" unique_id=991114211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1293402, 0, -1.721137)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=518434749]
+transform = Transform3D(0.9153747, 0, -0.4026029, 0, 1, 0, 0.4026029, 0, 0.9153747, 2.311196, 0, 4.5077677)
+shape = SubResource("BoxShape3D_hqawa")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=1696206255]
+transform = Transform3D(0.80635166, 0, 0.5914363, 0, 1, 0, -0.5914363, 0, 0.80635166, 6.196186, 0, 4.1921124)
+shape = SubResource("BoxShape3D_hqawa")
+
+[node name="StampPickup0" parent="." unique_id=1413452511 instance=ExtResource("16_4b3sa")]
+transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.82457525, 0.14532101, 1.0295807)
+
+[node name="StampPickup1" parent="." unique_id=1122972821 instance=ExtResource("17_lxy1u")]
+transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 1.5395823, 0.14532107, 1.2059793)
+
+[node name="StampPickup2" parent="." unique_id=1221614792 instance=ExtResource("18_5eqyc")]
+transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 1.2269878, 0.14532107, 1.6101035)
+
+[node name="StampPickup3" parent="." unique_id=1233178507 instance=ExtResource("19_ph1mv")]
+transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.53106195, 0.14532107, 1.5293772)
+
+[node name="StampPickup4" parent="." unique_id=1103314064 instance=ExtResource("20_v2eyj")]
+transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.93197334, 0.14532107, 1.5743749)
+
+[node name="StampPickup5" parent="." unique_id=1280633073 instance=ExtResource("21_pcunm")]
+transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.8814939, 0.14532107, 1.2715418)
+
+[node name="LawTrigger" parent="." unique_id=1916224518 instance=ExtResource("22_md78w")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0.30773205, 0.04289432, 0.9628674)
+
+[node name="EmbromationExit" type="Area3D" parent="." unique_id=46853120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.071516, 0, 0.36034137)
+script = SubResource("GDScript_4b3sa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmbromationExit" unique_id=170282091]
+shape = SubResource("SphereShape3D_lxy1u")
+
+[connection signal="body_entered" from="EmbromationExit" to="EmbromationExit" method="_on_body_entered"]

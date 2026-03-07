@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cs4wanl1wtpxv"]
+
+[ext_resource type="Script" uid="uid://dbxdlpss3qwdv" path="res://Scripts/tv_event_trigger.gd" id="1_7qupa"]
+[ext_resource type="Texture2D" uid="uid://ciijdlke56i63" path="res://Images/Props/Level3/televisão de frente v2.png" id="2_7qupa"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mcamd"]
+radius = 5.89
+
+[node name="TVEventTrigger" type="Area3D" unique_id=294610580 node_paths=PackedStringArray("tv_screen")]
+transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 0, 0, 0)
+script = ExtResource("1_7qupa")
+tv_screen = NodePath("TVScreen")
+metadata/_custom_type_script = "uid://dbxdlpss3qwdv"
+
+[node name="TVMoldure" type="Sprite3D" parent="." unique_id=1291711949]
+texture = ExtResource("2_7qupa")
+
+[node name="TVScreen" type="Sprite3D" parent="." unique_id=79435101]
+transform = Transform3D(0.315, 0, 0, 0, 0.26, 0, 0, 0, 0.26, 0, 0, 0.005)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1248563221]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -7.130998, 4.208903)
+shape = SubResource("SphereShape3D_mcamd")

@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://cfxbasxof0n4h"]
+
+[ext_resource type="PackedScene" uid="uid://kcfowtj7qal7" path="res://Nodes/HUD/game_hud.tscn" id="1_6r31w"]
+[ext_resource type="Material" uid="uid://ckvwq7l6kg731" path="res://Materials/grass_material.tres" id="2_m645f"]
+[ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="3_yoc1y"]
+[ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="4_pdwhg"]
+[ext_resource type="Texture2D" uid="uid://bualoxgeg7lup" path="res://Images/arvore.png" id="5_6gc6d"]
+[ext_resource type="Texture2D" uid="uid://8ganr4tg5r75" path="res://Images/Arvore-tipo-2.png" id="6_upmo1"]
+[ext_resource type="Texture2D" uid="uid://cxk34kce2jd43" path="res://Images/Props/Level2/template.jpg" id="7_c3lfe"]
+[ext_resource type="PackedScene" uid="uid://dndhcwd5wvm5" path="res://Nodes/Props/Level2/estrada.tscn" id="7_m645f"]
+[ext_resource type="Texture2D" uid="uid://cuqwghtb46e2k" path="res://Images/Props/Level2/Rua.png" id="8_j8fj0"]
+[ext_resource type="Material" uid="uid://cw6n4s51l34vb" path="res://Materials/sidewalk_material.tres" id="9_y8c6u"]
+[ext_resource type="PackedScene" uid="uid://cocwwv6vykvhg" path="res://Nodes/Props/Level2/arvore.tscn" id="10_y8c6u"]
+[ext_resource type="PackedScene" uid="uid://bfa2dyc1sk1hy" path="res://Nodes/Props/Level2/baleia.tscn" id="11_6p1qf"]
+[ext_resource type="PackedScene" uid="uid://beim23n51lqqe" path="res://Nodes/Props/Level2/bueiro.tscn" id="12_q81a4"]
+[ext_resource type="PackedScene" uid="uid://buuvdmkaoghcm" path="res://Nodes/Props/Level2/predio_a.tscn" id="13_q81a4"]
+[ext_resource type="PackedScene" uid="uid://cn7hqolk11de0" path="res://Nodes/Props/Level2/predio_b.tscn" id="14_awf8e"]
+[ext_resource type="PackedScene" uid="uid://j27s4bed17d0" path="res://Nodes/Props/Level2/predio_c.tscn" id="15_p6ykc"]
+[ext_resource type="PackedScene" uid="uid://ugluc2gvu4q8" path="res://Nodes/Props/Level2/predio_principal.tscn" id="16_p6ykc"]
+[ext_resource type="PackedScene" uid="uid://cnus8w75guwux" path="res://Nodes/Props/Level2/chao_tex_a.tscn" id="17_6r31w"]
+[ext_resource type="PackedScene" uid="uid://4lc8ble5swfc" path="res://Nodes/Props/Level2/chao_tex_b.tscn" id="18_m645f"]
+[ext_resource type="PackedScene" uid="uid://b6x7yfdat0e7w" path="res://Nodes/Props/poste.tscn" id="20_yoc1y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4148v"]
+sky_material = SubResource("ProceduralSkyMaterial_ue6s0")
+
+[sub_resource type="Environment" id="Environment_nduah"]
+background_mode = 2
+sky = SubResource("Sky_4148v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gf4i6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8fj0"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6ykc"]
+size = Vector3(6.28479, 3.543213, 17.871552)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdwhg"]
+size = Vector3(6.28479, 3.543213, 7.394645)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hoao"]
+size = Vector3(6.28479, 3.543213, 16.812439)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6r31w"]
+size = Vector3(6.703083, 3.543213, 22.32724)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yoc1y"]
+size = Vector3(5.604471, 3.543213, 22.32724)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m645f"]
+size = Vector3(6.28479, 3.543213, 22.32724)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6gc6d"]
+size = Vector3(6.3279533, 4.1799316, 3.7872925)
+
+[node name="Level2" type="Node3D" unique_id=1234912434]
+
+[node name="GameHUD" parent="." unique_id=1834046072 instance=ExtResource("1_6r31w")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=288717097]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1866068959]
+environment = SubResource("Environment_nduah")
+
+[node name="CameraFollower" parent="." unique_id=444914822 node_paths=PackedStringArray("follow_object") instance=ExtResource("3_yoc1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6049035, 0.09843896, -0.27893645)
+follow_object = NodePath("../Player")
+min_x_boundaries = -1.715
+enable_min_z_boundaries = true
+min_z_boundaries = -2.113
+
+[node name="Player" parent="." unique_id=1625356180 instance=ExtResource("4_pdwhg")]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -1.8874662, 0.09843896, 0.7687412)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=331097311]
+transform = Transform3D(0.115716964, 0, 0, 0, 0.115716964, 0, 0, 0, 0.115716964, -1.510849, 0.43728137, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_6gc6d")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1299404394]
+transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 2.2157753, 0.4613825, 0)
+visible = false
+billboard = 1
+texture = ExtResource("6_upmo1")
+
+[node name="Props" type="Node3D" parent="." unique_id=905399719]
+
+[node name="Template" type="Sprite3D" parent="Props" unique_id=1707278532]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.558, 0)
+visible = false
+modulate = Color(1, 0.2509804, 0.23529412, 1)
+render_priority = -1
+texture = ExtResource("7_c3lfe")
+metadata/_edit_lock_ = true
+
+[node name="Estrada" parent="Props" unique_id=759174777 instance=ExtResource("7_m645f")]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.348, 0, 1.806)
+
+[node name="Estrada2" type="Sprite3D" parent="Props" unique_id=1782760872]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -8.005426, 0, 1.2186263)
+flip_h = true
+flip_v = true
+texture = ExtResource("8_j8fj0")
+
+[node name="Calçada" type="MeshInstance3D" parent="Props" unique_id=986557886]
+process_priority = -1
+transform = Transform3D(5.472574, 0, -3.0038865, 0, 3.44, 0, 3.5520306, 0, 4.628055, 1.268, -0.001, -1.95)
+material_override = ExtResource("9_y8c6u")
+mesh = SubResource("PlaneMesh_gf4i6")
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="StaticBody3D" parent="Props/Calçada" unique_id=1804145506]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Calçada/Area3D" unique_id=1071638606]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_j8fj0")
+
+[node name="Calçada2" type="MeshInstance3D" parent="Props" unique_id=1516496566]
+process_priority = -1
+transform = Transform3D(5.531071, 0, -0.791607, 0, 0.906, 0, 3.5899978, 0, 1.2196205, -4.881328, -0.001, 4.516341)
+material_override = ExtResource("2_m645f")
+mesh = SubResource("PlaneMesh_gf4i6")
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="StaticBody3D" parent="Props/Calçada2" unique_id=1308773960]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Calçada2/Area3D" unique_id=1769718100]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_j8fj0")
+
+[node name="Arvores" type="Node3D" parent="Props" unique_id=2011710851]
+
+[node name="Arvore1" parent="Props/Arvores" unique_id=2006599772 instance=ExtResource("10_y8c6u")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, -1.0683312, 0.23200518, 1.7377843)
+
+[node name="Arvore2" parent="Props/Arvores" unique_id=172174576 instance=ExtResource("10_y8c6u")]
+transform = Transform3D(-0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, -0.5192009, 0.232, -1.8782281)
+
+[node name="Arvore12" parent="Props/Arvores" unique_id=1295245467 instance=ExtResource("10_y8c6u")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, -1.7594473, 0.232, -2.3688471)
+
+[node name="Arvore3" parent="Props/Arvores" unique_id=2202207 instance=ExtResource("10_y8c6u")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, 2.4848824, 0.232, 0.05751753)
+
+[node name="Arvore13" parent="Props/Arvores" unique_id=397957862 instance=ExtResource("10_y8c6u")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, -2.8770428, 0.232, -1.6909235)
+
+[node name="Arvore34" parent="Props/Arvores" unique_id=2121203307 instance=ExtResource("10_y8c6u")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, -0.81589615, 0.232, -3.1555984)
+
+[node name="Arvore38" parent="Props/Arvores" unique_id=1529482456 instance=ExtResource("10_y8c6u")]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, 0.34740806, 0.232, -3.6539407)
+
+[node name="Baleia" parent="Props" unique_id=1792322880 instance=ExtResource("11_6p1qf")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -0.37405968, 0.2552194, -0.7481185)
+
+[node name="Bueiro" parent="Props" unique_id=162908202 instance=ExtResource("12_q81a4")]
+transform = Transform3D(0.111, 0, 0, 0, -4.851964e-09, 0.111, 0, -0.111, -4.851964e-09, -2.3780975, 0, 0.768539)
+
+[node name="Bueiro2" parent="Props" unique_id=1802842820 instance=ExtResource("12_q81a4")]
+transform = Transform3D(0.111, 0, 0, 0, -4.851964e-09, 0.111, 0, -0.111, -4.851964e-09, -0.24463177, 0, 2.7911997)
+
+[node name="Bueiro3" parent="Props" unique_id=554808411 instance=ExtResource("12_q81a4")]
+transform = Transform3D(0.111, 0, 0, 0, -4.851964e-09, 0.111, 0, -0.111, -4.851964e-09, 1.5779729, -8.881784e-16, -0.18837702)
+
+[node name="PredioA" parent="Props" unique_id=1528747793 instance=ExtResource("13_q81a4")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -4.0269465, 0.8815596, -1.0768452)
+
+[node name="PredioB" parent="Props" unique_id=1283315381 instance=ExtResource("14_awf8e")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 3.3988504, 0.34710836, -0.5465544)
+
+[node name="PredioC" parent="Props" unique_id=1509223836 instance=ExtResource("15_p6ykc")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 2.0103848, 0.49191022, 1.7936506)
+
+[node name="PredioPrincipal" parent="Props" unique_id=302807635 instance=ExtResource("16_p6ykc")]
+transform = Transform3D(0.161, 0, 0, 0, 0.076822564, 0.14148957, 0, -0.14148957, 0.076822564, 2.899, 2.141, -2.257)
+
+[node name="ChaoTexA" parent="Props" unique_id=1334747901 instance=ExtResource("17_6r31w")]
+transform = Transform3D(0.166, 0, 0, 0, -7.2560904e-09, 0.166, 0, -0.166, -7.2560904e-09, -2.2463431, 0, 0.12458843)
+
+[node name="ChaoTexB" parent="Props" unique_id=1365344714 instance=ExtResource("18_m645f")]
+transform = Transform3D(0.171, 0, 0, 0, -7.474648e-09, 0.171, 0, -0.171, -7.474648e-09, 0.7545135, 0, 0.11369379)
+
+[node name="Poste1" parent="Props" unique_id=1462842742 instance=ExtResource("20_yoc1y")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -3.5260925, 0.023984432, 1.1512839)
+
+[node name="Poste3" parent="Props" unique_id=380320590 instance=ExtResource("20_yoc1y")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.3494234, 0.023984432, 2.8174617)
+
+[node name="Poste4" parent="Props" unique_id=352303990 instance=ExtResource("20_yoc1y")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -3.383101, 0.023984432, 3.5950441)
+
+[node name="Poste5" parent="Props" unique_id=593402345 instance=ExtResource("20_yoc1y")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0.75582075, 0.016890109, -2.626885)
+
+[node name="Poste6" parent="Props" unique_id=1392339900 instance=ExtResource("20_yoc1y")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 1.6881412, 0.023984432, 0.75983953)
+
+[node name="Poste2" parent="Props" unique_id=161859401 instance=ExtResource("20_yoc1y")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -5.021444, 0.023984432, 2.437286)
+
+[node name="Colisores" type="Node3D" parent="." unique_id=480736553]
+
+[node name="Parede Invisível" type="StaticBody3D" parent="Colisores" unique_id=991114211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1293402, 0, -1.721137)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=1812511716]
+transform = Transform3D(0.64935523, 0, -0.7604854, 0, 1, 0, 0.7604854, 0, 0.64935523, -0.8677845, 0, -1.6571772)
+shape = SubResource("BoxShape3D_p6ykc")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=272356241]
+transform = Transform3D(0.9037019, 0, -0.4281625, 0, 1, 0, 0.4281625, 0, 0.9037019, 6.9563875, 0, -3.6768584)
+shape = SubResource("BoxShape3D_pdwhg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=1664897630]
+transform = Transform3D(0.52039886, 0, 0.85392344, 0, 1, 0, -0.85392344, 0, 0.52039886, 8.981987, 0, -3.2019243)
+shape = SubResource("BoxShape3D_0hoao")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=597767103]
+transform = Transform3D(0.86351, 0, -0.50433195, 0, 1, 0, 0.50433195, 0, 0.86351, 7.8806734, 0, 4.2087965)
+shape = SubResource("BoxShape3D_6r31w")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=602653581]
+transform = Transform3D(0.34060913, 0, -0.9402051, 0, 1, 0, 0.9402051, 0, 0.34060913, 4.192914, 0, 6.496621)
+shape = SubResource("BoxShape3D_yoc1y")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=801731821]
+transform = Transform3D(-0.594037, 0, -0.80443776, 0, 1, 0, 0.80443776, 0, -0.594037, -1.9027472, 0, 7.782178)
+shape = SubResource("BoxShape3D_m645f")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Colisores/Parede Invisível" unique_id=2018898810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8596888, 0.67419434, -2.3612132)
+shape = SubResource("BoxShape3D_6gc6d")

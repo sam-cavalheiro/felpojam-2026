@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wtaklua6jp00"]
 
-[ext_resource type="Texture2D" uid="uid://c76xaena8iqmn" path="res://Images/Props/level_1/lixeira.png" id="1_6vi55"]
+[ext_resource type="Texture2D" uid="uid://c76xaena8iqmn" path="res://Images/Props/Level1/lixeira.png" id="1_6vi55"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6vi55"]
 radius = 1.1137002

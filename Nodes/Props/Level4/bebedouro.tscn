@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bqhkso25gpyxr"]
+
+[ext_resource type="Texture2D" uid="uid://dt107jaon1dql" path="res://Images/Props/Level4/bebedouro.png" id="1_6v8t2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6v8t2"]
+radius = 1.3205119
+
+[node name="Bebedouro" type="StaticBody3D" unique_id=607430287]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=700087381]
+texture = ExtResource("1_6v8t2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1040284601]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.99999934, -8.940697e-08, 0, 8.940697e-08, 0.99999934, 0, -1.097196, -0.14643002)
+shape = SubResource("SphereShape3D_6v8t2")

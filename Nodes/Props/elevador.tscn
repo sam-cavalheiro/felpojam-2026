@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bvxd437xmalyc"]
+
+[ext_resource type="Texture2D" uid="uid://b8fu5xt2yib5k" path="res://Images/Props/Level3/elevador de frente.png" id="1_afdcc"]
+
+[node name="Elevador" type="Sprite3D" unique_id=955659371]
+transform = Transform3D(0.11099999, 0, 0, 0, 0.110999994, 0, 0, 0, 0.110999994, 0, 0, 0)
+texture = ExtResource("1_afdcc")

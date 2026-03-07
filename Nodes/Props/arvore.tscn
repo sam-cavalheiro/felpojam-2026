@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bljlhw83ny287"]
+
+[ext_resource type="Texture2D" uid="uid://cfrnmiajumiqx" path="res://Images/Props/Level3/vaso-de-planta.png" id="1_b0g5c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b0g5c"]
+radius = 1.744
+
+[node name="Arvore" type="StaticBody3D" unique_id=1884622307]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=267397575]
+texture = ExtResource("1_b0g5c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1376966570]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -1.0647279, -1.8911369, -0.4053805)
+shape = SubResource("SphereShape3D_b0g5c")

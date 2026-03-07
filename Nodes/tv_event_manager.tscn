@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://beklbc66uxx4l"]
+
+[ext_resource type="Script" uid="uid://o7kkvdpoe7oc" path="res://Scripts/tv_event_manager.gd" id="1_k2qe1"]
+[ext_resource type="Texture2D" uid="uid://bqmghs74yt7ir" path="res://Images/TVEvents/tv_event_0.jpg" id="2_pkllq"]
+[ext_resource type="Texture2D" uid="uid://bwf8vyt5rajcv" path="res://Images/TVEvents/tv_event_2.jpg" id="3_5nnbx"]
+[ext_resource type="Texture2D" uid="uid://cpcwitix4uudt" path="res://Images/TVEvents/tv_event_3.jpg" id="4_5d8n5"]
+[ext_resource type="Texture2D" uid="uid://oupjo5b54vdm" path="res://Images/TVEvents/tv_event_5.jpg" id="5_xxf7x"]
+[ext_resource type="Texture2D" uid="uid://x7fgm3bpe1nv" path="res://Images/TVEvents/tv_event_6.jpg" id="6_lgqnv"]
+[ext_resource type="Texture2D" uid="uid://tifwvxkylm21" path="res://Images/TVEvents/tv_event_7.jpg" id="7_2vwpa"]
+[ext_resource type="Texture2D" uid="uid://dnbk8j0q1ufv" path="res://Images/TVEvents/tv_event_9.jpg" id="8_nwx3m"]
+[ext_resource type="Texture2D" uid="uid://4vd6mb2mp3sk" path="res://Images/TVEvents/tv_event_10.jpg" id="9_lc8vy"]
+[ext_resource type="Texture2D" uid="uid://dpb7oe6qrqwhc" path="res://Images/TVEvents/tv_event_no_news.jpg" id="10_5nnbx"]
+
+[node name="TVEventManager" type="Node" unique_id=16723617]
+script = ExtResource("1_k2qe1")
+tv_news_textures = Array[Texture2D]([ExtResource("2_pkllq"), null, ExtResource("3_5nnbx"), ExtResource("4_5d8n5"), null, ExtResource("5_xxf7x"), ExtResource("6_lgqnv"), ExtResource("7_2vwpa"), null, ExtResource("8_nwx3m"), ExtResource("9_lc8vy"), null])
+tv_no_news_texture = ExtResource("10_5nnbx")

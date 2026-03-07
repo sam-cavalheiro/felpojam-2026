@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ce1wl5ivxkpyp"]
+
+[ext_resource type="Script" uid="uid://dluxpajt2do5e" path="res://Scripts/stamps_manager.gd" id="1_hr6xa"]
+[ext_resource type="Texture2D" uid="uid://w6u215kqpxsb" path="res://Images/Stamps/stamp_0.png" id="2_nla88"]
+[ext_resource type="Texture2D" uid="uid://dki0xs3pauqi6" path="res://Images/Stamps/stamp_1.png" id="3_vqyf7"]
+[ext_resource type="Texture2D" uid="uid://yn43s5an03q7" path="res://Images/Stamps/stamp_2.png" id="4_os8a3"]
+[ext_resource type="Texture2D" uid="uid://bsrosoohfbl14" path="res://Images/Stamps/stamp_3.png" id="5_6cxdg"]
+[ext_resource type="Texture2D" uid="uid://com0uow2fbkeg" path="res://Images/Stamps/stamp_4.png" id="6_shyl5"]
+[ext_resource type="Texture2D" uid="uid://m3vfhrbjw2bj" path="res://Images/Stamps/stamp_5.png" id="7_50jng"]
+
+[node name="StampsManager" type="Node" unique_id=1680741033]
+script = ExtResource("1_hr6xa")
+stamp_marks = Array[Texture2D]([ExtResource("2_nla88"), ExtResource("3_vqyf7"), ExtResource("4_os8a3"), ExtResource("5_6cxdg"), ExtResource("6_shyl5"), ExtResource("7_50jng")])

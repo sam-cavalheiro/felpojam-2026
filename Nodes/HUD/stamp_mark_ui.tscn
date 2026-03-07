@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bkf0g3uf5x4ic"]
+
+[node name="StampMarkUI" type="TextureRect" unique_id=1661767637]
+offset_right = 178.0
+offset_bottom = 142.0
+expand_mode = 1
+stretch_mode = 5

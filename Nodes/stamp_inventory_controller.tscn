@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bmuntb78pmtg8"]
+
+[ext_resource type="Script" uid="uid://cf6h01roiesxu" path="res://Scripts/stamp_inventory_controller.gd" id="1_lhb3b"]
+
+[node name="StampInventoryController" type="Node" unique_id=793465676]
+process_mode = 3
+script = ExtResource("1_lhb3b")

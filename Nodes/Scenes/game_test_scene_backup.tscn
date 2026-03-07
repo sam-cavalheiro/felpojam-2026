@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://1408rix2v3lk"]
+
+[ext_resource type="PackedScene" uid="uid://687hp52q7pwn" path="res://Nodes/HUD/stamper_cursor_hud.tscn" id="1_c1ipj"]
+[ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/HUD/pause_menu.tscn" id="2_464u4"]
+[ext_resource type="PackedScene" uid="uid://bncog4belnk33" path="res://Nodes/HUD/law_hud.tscn" id="3_kcesr"]
+[ext_resource type="PackedScene" uid="uid://b7ow6lp68kxwp" path="res://Nodes/HUD/tv_event_hud.tscn" id="4_2m6g3"]
+[ext_resource type="PackedScene" uid="uid://bfhi8khb8p6k7" path="res://Nodes/HUD/stamps_hud.tscn" id="5_g0121"]
+[ext_resource type="Material" uid="uid://ckvwq7l6kg731" path="res://Materials/grass_material.tres" id="6_qivo7"]
+[ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="7_8o50h"]
+[ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="8_fb32e"]
+[ext_resource type="Texture2D" uid="uid://bualoxgeg7lup" path="res://Images/arvore.png" id="9_xfclj"]
+[ext_resource type="Texture2D" uid="uid://8ganr4tg5r75" path="res://Images/Arvore-tipo-2.png" id="10_dwbjj"]
+[ext_resource type="PackedScene" uid="uid://n2f7mqrmkvuw" path="res://Nodes/Triggers/law_trigger.tscn" id="11_8hd3r"]
+[ext_resource type="PackedScene" uid="uid://tdn3jq3mof8s" path="res://Nodes/Triggers/tv_event_trigger_test.tscn" id="12_jmrhw"]
+[ext_resource type="PackedScene" uid="uid://t3kf4w4i18ku" path="res://Nodes/Pickups/stamp_pickup_0.tscn" id="13_ld738"]
+[ext_resource type="PackedScene" uid="uid://cwl5qim0sstnk" path="res://Nodes/Pickups/stamp_pickup_1.tscn" id="14_pv2bu"]
+[ext_resource type="PackedScene" uid="uid://bsvmpbllqfnff" path="res://Nodes/Pickups/stamp_pickup_2.tscn" id="15_a8ma1"]
+[ext_resource type="PackedScene" uid="uid://b063mceeip86h" path="res://Nodes/Pickups/stamp_pickup_3.tscn" id="16_5m3mn"]
+[ext_resource type="PackedScene" uid="uid://dwlpkiqgurvea" path="res://Nodes/Pickups/stamp_pickup_4.tscn" id="17_ufikd"]
+[ext_resource type="PackedScene" uid="uid://dh2qx7eugcduc" path="res://Nodes/Pickups/stamp_pickup_5.tscn" id="18_tlrdf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4148v"]
+sky_material = SubResource("ProceduralSkyMaterial_ue6s0")
+
+[sub_resource type="Environment" id="Environment_nduah"]
+background_mode = 2
+sky = SubResource("Sky_4148v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ue6s0"]
+size = Vector3(2, 1, 2)
+
+[node name="GameTestScene" type="Node3D" unique_id=1234912434]
+
+[node name="StamperCursorHUD" parent="." unique_id=1571985949 instance=ExtResource("1_c1ipj")]
+
+[node name="PauseMenu" parent="." unique_id=1779303702 instance=ExtResource("2_464u4")]
+
+[node name="LawHUD" parent="." unique_id=164234758 instance=ExtResource("3_kcesr")]
+
+[node name="TVEventHUD" parent="." unique_id=647537413 instance=ExtResource("4_2m6g3")]
+
+[node name="StampsHUD" parent="." unique_id=1697470788 instance=ExtResource("5_g0121")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=288717097]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1866068959]
+environment = SubResource("Environment_nduah")
+
+[node name="Chão" type="MeshInstance3D" parent="." unique_id=1365335009]
+transform = Transform3D(2.9475384, 0, 0, 0, 1, 0, 0, 0, 2.4662971, 0, 0, 0)
+material_override = ExtResource("6_qivo7")
+mesh = SubResource("PlaneMesh_noarx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Chão" unique_id=407008456]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chão/StaticBody3D" unique_id=2056964285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ue6s0")
+
+[node name="CameraFollower" parent="." unique_id=444914822 node_paths=PackedStringArray("follow_object") instance=ExtResource("7_8o50h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.673, -0.048561037, 0.21351552)
+follow_object = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1625356180 instance=ExtResource("8_fb32e")]
+transform = Transform3D(0.04069717, 0, 0, 0, 0.04069717, 0, 0, 0, 0.04069717, 1.673, 0.09843896, 0.21351552)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=331097311]
+transform = Transform3D(0.115716964, 0, 0, 0, 0.115716964, 0, 0, 0, 0.115716964, -1.510849, 0.43728137, 0)
+billboard = 1
+texture = ExtResource("9_xfclj")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1299404394]
+transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 2.2157753, 0.4613825, 0)
+billboard = 1
+texture = ExtResource("10_dwbjj")
+
+[node name="LawTrigger" parent="." unique_id=1916224518 instance=ExtResource("11_8hd3r")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.2539129, 0.3304242, 1.2276717)
+
+[node name="TVEventTrigger" parent="." unique_id=477542031 instance=ExtResource("12_jmrhw")]
+transform = Transform3D(0.2781784, 0, 0, 0, 0.2781784, 0, 0, 0, 0.2781784, -0.2867185, 0.088350594, 1.7336386)
+
+[node name="StampPickup0" parent="." unique_id=846596065 instance=ExtResource("13_ld738")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, -0.72507274, 0.15015471, -1.7383357)
+
+[node name="StampPickup1" parent="." unique_id=1979877393 instance=ExtResource("14_pv2bu")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 0.5861344, 0.14221, -1.3064519)
+
+[node name="StampPickup3" parent="." unique_id=2027882678 instance=ExtResource("15_a8ma1")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 2.0546184, 0.15015483, -1.3993524)
+
+[node name="StampPickup4" parent="." unique_id=561863693 instance=ExtResource("16_5m3mn")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, -0.8036363, 0.14221, -0.86157835)
+
+[node name="StampPickup5" parent="." unique_id=491513540 instance=ExtResource("17_ufikd")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 0.65033233, 0.15015471, -0.49117202)
+
+[node name="StampPickup6" parent="." unique_id=1636298044 instance=ExtResource("18_tlrdf")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 1.8740101, 0.14221, -0.5622049)

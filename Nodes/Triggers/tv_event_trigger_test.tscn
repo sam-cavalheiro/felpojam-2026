@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://tdn3jq3mof8s"]
+
+[ext_resource type="Script" uid="uid://dbxdlpss3qwdv" path="res://Scripts/tv_event_trigger.gd" id="1_dk0go"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dk0go"]
+
+[node name="TVEventTrigger" type="Area3D" unique_id=477542031 node_paths=PackedStringArray("tv_screen")]
+script = ExtResource("1_dk0go")
+tv_screen = NodePath("TVScreen")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1545446679]
+shape = SubResource("BoxShape3D_dk0go")
+
+[node name="TVScreen" type="Sprite3D" parent="." unique_id=398147476]
+transform = Transform3D(0.267125, 0, 0, 0, 0.267125, 0, 0, 0, 0.267125, 0, 2.067655, 0)
+transparent = false
+double_sided = false

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://beim23n51lqqe"]
+
+[ext_resource type="Texture2D" uid="uid://cp02pkfxwm68c" path="res://Images/Props/Level2/bueiro.png" id="1_7g7gr"]
+
+[node name="Bueiro" type="Sprite3D" unique_id=162908202]
+transform = Transform3D(0.111, 0, 0, 0, -4.851964e-09, 0.111, 0, -0.111, -4.851964e-09, 0, 0, 0)
+texture = ExtResource("1_7g7gr")

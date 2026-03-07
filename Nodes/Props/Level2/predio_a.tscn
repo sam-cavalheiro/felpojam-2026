@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://buuvdmkaoghcm"]
+
+[ext_resource type="Texture2D" uid="uid://1rphg0xqyl1q" path="res://Images/Props/Level2/prédio-1.png" id="1_8p88t"]
+
+[node name="PredioA" type="Node3D" unique_id=2078039642]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1722845983]
+texture = ExtResource("1_8p88t")

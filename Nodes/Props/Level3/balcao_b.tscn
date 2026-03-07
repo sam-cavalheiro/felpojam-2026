@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c0eg4h4xc5l8c"]
+
+[ext_resource type="Texture2D" uid="uid://chavdj1euvmte" path="res://Images/Props/Level3/mesona-tipo-2.png" id="1_ql6cp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ql6cp"]
+size = Vector3(5.04, 11.698389, 9.0373535)
+
+[node name="BalcaoB" type="StaticBody3D" unique_id=1510805526]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=206045428]
+texture = ExtResource("1_ql6cp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=844282958]
+transform = Transform3D(0.490858, 0.76566017, -0.41571942, -0.76564777, 0.6067785, 0.21349806, 0.41571316, 0.21350063, 0.88406515, -0.33877113, -0.26847202, -0.0944643)
+shape = SubResource("BoxShape3D_ql6cp")

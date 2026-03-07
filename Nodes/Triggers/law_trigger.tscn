@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://n2f7mqrmkvuw"]
+
+[ext_resource type="Script" uid="uid://cg83ven17iy2u" path="res://Scripts/law_trigger.gd" id="1_b6y5e"]
+[ext_resource type="Texture2D" uid="uid://3ae7e7t3h34a" path="res://Images/documentos_pilha.png" id="2_rduaw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04usk"]
+size = Vector3(1.9143066, 2.4404297, 2.2246094)
+
+[node name="LawTrigger" type="Area3D" unique_id=1916224518]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0.04289432, 0)
+script = ExtResource("1_b6y5e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=538860014]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999789, -1.4901161e-07, 0, 1.4901161e-07, 0.9999789, 0, 0, 0)
+shape = SubResource("BoxShape3D_04usk")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=987536720]
+transform = Transform3D(0.44983935, 0, 0, 0, 0.44983935, 0, 0, 0, 0.44983935, 0, 0, 0)
+texture = ExtResource("2_rduaw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwl5qim0sstnk"]
+
+[ext_resource type="PackedScene" uid="uid://7e26ldlh0qfi" path="res://Nodes/Pickups/stamp_pickup.tscn" id="1_w6ets"]
+[ext_resource type="Texture2D" uid="uid://ba8odm3iawaw" path="res://Images/Stamps/stamp_pickup_1.png" id="2_w6ets"]
+
+[node name="StampPickup1" unique_id=1413452511 instance=ExtResource("1_w6ets")]
+stamp_id = 1
+
+[node name="Sprite3D" parent="." index="1" unique_id=458987795]
+texture = ExtResource("2_w6ets")

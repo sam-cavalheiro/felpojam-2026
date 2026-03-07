@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c6eav8jdgtj1n"]
+
+[ext_resource type="Script" uid="uid://ceiwh4uey4v1a" path="res://Scripts/cheat_handler.gd" id="1_l18yq"]
+
+[node name="CheatHandler" type="Node" unique_id=1388704505]
+script = ExtResource("1_l18yq")
+
+[node name="PopupMenu" type="PopupMenu" parent="." unique_id=348050961]
+oversampling_override = 1.0
+
+[node name="AcceptDialog" type="AcceptDialog" parent="." unique_id=832739734]
+oversampling_override = 1.0
+title = "Versão de Desenvolvimento"
+position = Vector2i(0, 36)
+size = Vector2i(580, 132)
+dialog_text = "Você está jogando a versão de desenvolvimento.
+
+Use a tecla F12 para acessar o menu de cenas (menus, níveis, testes, etc)."
+
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ck067kgb4scim"]
+
+[ext_resource type="Texture2D" uid="uid://cg8edyi4jai8p" path="res://Images/Props/Level3/quadro parede 2.png" id="1_j5new"]
+
+[node name="QuadroB" type="Sprite3D" unique_id=1581651723]
+transform = Transform3D(0.09736322, 0, 0.053304814, 0, 0.110999994, 0, -0.053304814, 0, 0.09736322, 0, 0, 0)
+texture = ExtResource("1_j5new")

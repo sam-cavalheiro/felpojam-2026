@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://7e26ldlh0qfi"]
+
+[ext_resource type="Script" uid="uid://cr46nexaenh2v" path="res://Scripts/stamp_pickup.gd" id="1_lax8q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5fp8v"]
+size = Vector3(7.375, 6.4902344, 9.161133)
+
+[node name="StampPickup0" type="Area3D" unique_id=1413452511]
+transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0, 0.14532113, 0)
+script = ExtResource("1_lax8q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1519950943]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.99997973, -8.940697e-08, 0, 8.940697e-08, 0.99997973, 0, 0, 0)
+shape = SubResource("BoxShape3D_5fp8v")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=458987795]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

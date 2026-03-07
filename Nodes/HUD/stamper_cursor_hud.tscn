@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://687hp52q7pwn"]
+
+[ext_resource type="Script" uid="uid://qxxbvyachduo" path="res://Scripts/stamper_cursor_hud.gd" id="1_55584"]
+[ext_resource type="Texture2D" uid="uid://clxiimxj4lvho" path="res://Images/stamp_cursor.png" id="2_brh25"]
+
+[node name="StamperCursorHUD" type="Control" unique_id=1571985949]
+process_mode = 2
+visible = false
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_55584")
+stamp_mark_file = "uid://bkf0g3uf5x4ic"
+cursor_move_speed = 10.0
+stamp_mark_size = Vector2(178, 142)
+
+[node name="StampMark_Holder" type="Control" parent="." unique_id=1172510642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StampCursor" type="TextureRect" parent="." unique_id=2027425456]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008680556
+anchor_top = -0.095679015
+anchor_right = 0.17621528
+anchor_bottom = 0.23301263
+pivot_offset = Vector2(16.345, 71.225)
+texture = ExtResource("2_brh25")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="ClickArea" type="Control" parent="StampCursor" unique_id=2055267914]
+layout_mode = 1
+anchor_left = 0.0093896715
+anchor_top = 0.10798518
+anchor_right = 0.32394367
+anchor_bottom = 0.6338261
+metadata/_edit_use_anchors_ = true
+
+[connection signal="hidden" from="." to="." method="_on_hidden"]

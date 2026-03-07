@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bxwhoictd6bf"]
+
+[node name="StampMark3D" type="Sprite3D" unique_id=1597063180]
+transform = Transform3D(-2.1855695e-09, -0.05, -2.1855695e-09, 0, -2.1855695e-09, 0.05, -0.05, 2.1855695e-09, 9.553427e-17, 0, 0, 0)

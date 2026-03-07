@@ -2,9 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="1_5trqm"]
 [ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="1_m516x"]
-[ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/pause_menu.tscn" id="1_u8xdv"]
+[ext_resource type="PackedScene" uid="uid://kcfowtj7qal7" path="res://Nodes/HUD/game_hud.tscn" id="1_yb8um"]
 [ext_resource type="Texture2D" uid="uid://bualoxgeg7lup" path="res://Images/arvore.png" id="4_vfq78"]
+[ext_resource type="Material" uid="uid://ckvwq7l6kg731" path="res://Materials/grass_material.tres" id="5_6g0ft"]
 [ext_resource type="Texture2D" uid="uid://8ganr4tg5r75" path="res://Images/Arvore-tipo-2.png" id="5_ppsma"]
+[ext_resource type="PackedScene" uid="uid://n2f7mqrmkvuw" path="res://Nodes/Triggers/law_trigger.tscn" id="6_v3x6o"]
+[ext_resource type="PackedScene" uid="uid://tdn3jq3mof8s" path="res://Nodes/Triggers/tv_event_trigger_test.tscn" id="8_ghmuj"]
+[ext_resource type="PackedScene" uid="uid://t3kf4w4i18ku" path="res://Nodes/Pickups/stamp_pickup_0.tscn" id="13_mh74t"]
+[ext_resource type="PackedScene" uid="uid://cwl5qim0sstnk" path="res://Nodes/Pickups/stamp_pickup_1.tscn" id="14_po3o7"]
+[ext_resource type="PackedScene" uid="uid://bsvmpbllqfnff" path="res://Nodes/Pickups/stamp_pickup_2.tscn" id="15_lc06d"]
+[ext_resource type="PackedScene" uid="uid://b063mceeip86h" path="res://Nodes/Pickups/stamp_pickup_3.tscn" id="16_smgh7"]
+[ext_resource type="PackedScene" uid="uid://dwlpkiqgurvea" path="res://Nodes/Pickups/stamp_pickup_4.tscn" id="17_csfql"]
+[ext_resource type="PackedScene" uid="uid://dh2qx7eugcduc" path="res://Nodes/Pickups/stamp_pickup_5.tscn" id="18_w52sp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,7 +35,7 @@ size = Vector3(2, 1, 2)
 
 [node name="GameTestScene" type="Node3D" unique_id=1234912434]
 
-[node name="PauseMenu" parent="." unique_id=1779303702 instance=ExtResource("1_u8xdv")]
+[node name="GameHUD" parent="." unique_id=1834046072 instance=ExtResource("1_yb8um")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=288717097]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -37,6 +46,7 @@ environment = SubResource("Environment_nduah")
 
 [node name="Chão" type="MeshInstance3D" parent="." unique_id=1365335009]
 transform = Transform3D(2.9475384, 0, 0, 0, 1, 0, 0, 0, 2.4662971, 0, 0, 0)
+material_override = ExtResource("5_6g0ft")
 mesh = SubResource("PlaneMesh_noarx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Chão" unique_id=407008456]
@@ -61,3 +71,27 @@ texture = ExtResource("4_vfq78")
 transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 2.2157753, 0.4613825, 0)
 billboard = 1
 texture = ExtResource("5_ppsma")
+
+[node name="LawTrigger" parent="." unique_id=1916224518 instance=ExtResource("6_v3x6o")]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, -1.2539129, 0.3304242, 1.2276717)
+
+[node name="TVEventTrigger" parent="." unique_id=477542031 instance=ExtResource("8_ghmuj")]
+transform = Transform3D(0.2781784, 0, 0, 0, 0.2781784, 0, 0, 0, 0.2781784, -0.2867185, 0.088350594, 1.7336386)
+
+[node name="StampPickup0" parent="." unique_id=846596065 instance=ExtResource("13_mh74t")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, -0.72507274, 0.15015471, -1.7383357)
+
+[node name="StampPickup1" parent="." unique_id=1979877393 instance=ExtResource("14_po3o7")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 0.5861344, 0.14221, -1.3064519)
+
+[node name="StampPickup3" parent="." unique_id=2027882678 instance=ExtResource("15_lc06d")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 2.0546184, 0.15015483, -1.3993524)
+
+[node name="StampPickup4" parent="." unique_id=561863693 instance=ExtResource("16_smgh7")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, -0.8036363, 0.14221, -0.86157835)
+
+[node name="StampPickup5" parent="." unique_id=491513540 instance=ExtResource("17_csfql")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 0.65033233, 0.15015471, -0.49117202)
+
+[node name="StampPickup6" parent="." unique_id=1636298044 instance=ExtResource("18_w52sp")]
+transform = Transform3D(0.026, 0, 0, 0, 0.012406128, 0.022849247, 0, -0.022849247, 0.012406128, 1.8740101, 0.14221, -0.5622049)

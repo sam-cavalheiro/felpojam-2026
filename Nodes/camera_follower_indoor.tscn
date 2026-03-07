@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dtou7txs4ge3h"]
+
+[ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="1_lubmw"]
+
+[node name="CameraFollowerIndoor" unique_id=444914822 instance=ExtResource("1_lubmw")]
+
+[node name="Camera3D" parent="." index="0" unique_id=1115332085]
+transform = Transform3D(1, 0, 0, 0, 0.47715876, 0.87881714, 0, -0.87881714, 0.47715876, 0, 1.2753484, 0.5766498)

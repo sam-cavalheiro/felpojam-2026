@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cnus8w75guwux"]
+
+[ext_resource type="Texture2D" uid="uid://f2r3l2ck3agn" path="res://Images/Props/Level2/chão-textura-1.png" id="1_qohy7"]
+
+[node name="ChaoTexA" type="Sprite3D" unique_id=1334747901]
+transform = Transform3D(0.110999994, 0, 0, 0, -4.8519637e-09, 0.110999994, 0, -0.110999994, -4.8519637e-09, 0, 0, 0)
+texture = ExtResource("1_qohy7")

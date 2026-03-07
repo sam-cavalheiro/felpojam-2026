@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ugluc2gvu4q8"]
+
+[ext_resource type="Texture2D" uid="uid://j5n55ctwaecw" path="res://Images/Props/Level2/prédio-PRINCIPAL.png" id="1_fhnwu"]
+
+[node name="PredioPrincipal" type="Node3D" unique_id=1011478829]
+transform = Transform3D(0.161, 0, 0, 0, 0.07682256, 0.14148957, 0, -0.14148957, 0.07682256, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=299548842]
+transform = Transform3D(0.68500006, 0, 0, 0, 0.68500006, 0, 0, 0, 0.68500006, 0, -4.264596, -7.854411)
+render_priority = 2
+texture = ExtResource("1_fhnwu")

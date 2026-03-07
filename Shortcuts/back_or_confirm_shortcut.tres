@@ -1,0 +1,10 @@
+[gd_resource type="Shortcut" format=3 uid="uid://bg5vwwy8d1e26"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ured6"]
+action = &"ui_cancel"
+
+[sub_resource type="InputEventAction" id="InputEventAction_yiypj"]
+action = &"interact"
+
+[resource]
+events = [SubResource("InputEventAction_ured6"), SubResource("InputEventAction_yiypj")]

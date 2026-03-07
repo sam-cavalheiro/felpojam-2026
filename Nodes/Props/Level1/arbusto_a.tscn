@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmfrfxryx1fle"]
 
-[ext_resource type="Texture2D" uid="uid://bkw1w656g4uin" path="res://Images/Props/level_1/arbusto-tipo-1.png" id="1_anmmq"]
+[ext_resource type="Texture2D" uid="uid://bkw1w656g4uin" path="res://Images/Props/Level1/arbusto-tipo-1.png" id="1_anmmq"]
 
 [node name="ArbustoA" type="Node3D" unique_id=761955766]
 transform = Transform3D(0.655, 0, 0, 0, 0.655, 0, 0, 0, 0.655, 0, 0, 0)

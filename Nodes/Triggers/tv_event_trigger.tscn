@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dvgrlxu0850fa"]
+
+[ext_resource type="Script" uid="uid://dbxdlpss3qwdv" path="res://Scripts/tv_event_trigger.gd" id="1_wxuvi"]
+[ext_resource type="ArrayMesh" uid="uid://e7phsphjlxmu" path="res://Models/Props/Level3/tv_model.obj" id="2_mcamd"]
+[ext_resource type="Texture2D" uid="uid://8oehmvm52led" path="res://Images/Props/Level3/Televisão.png" id="3_8r0cb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcamd"]
+
+[sub_resource type="GDScript" id="GDScript_mcamd"]
+resource_name = "MaterialRenderPriorityChanger"
+script/source = "extends MeshInstance3D
+
+const RENDER_PRIORITY: = 2
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	LawsManager.on_approve_law.connect(on_approve_law)
+
+func on_approve_law(law_id: int) -> void:
+	material_override.render_priority = RENDER_PRIORITY
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mcamd"]
+radius = 13.0
+
+[node name="TVEventTrigger" type="Area3D" unique_id=294610580 node_paths=PackedStringArray("tv_screen")]
+transform = Transform3D(0.101, 0, 0, 0, 0.101, 0, 0, 0, 0.101, 0, 0, 0)
+script = ExtResource("1_wxuvi")
+tv_screen = NodePath("TVScreen")
+metadata/_custom_type_script = "uid://dbxdlpss3qwdv"
+
+[node name="TVScreen" type="MeshInstance3D" parent="." unique_id=611778149]
+transform = Transform3D(1.3052256, 0, 0, 0, 1.3052256, 0, 0, 0, 1.3052256, 0, 0, 0.0047319154)
+material_override = SubResource("StandardMaterial3D_mcamd")
+mesh = ExtResource("2_mcamd")
+script = SubResource("GDScript_mcamd")
+
+[node name="TVMoldure" type="Sprite3D" parent="." unique_id=1291711949]
+texture = ExtResource("3_8r0cb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1248563221]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("SphereShape3D_mcamd")

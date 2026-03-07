@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clbr110tgirem"]
 
-[ext_resource type="Texture2D" uid="uid://db5rralgxgipr" path="res://Images/Props/level_1/banco-tipo-1.png" id="1_axf8u"]
+[ext_resource type="Texture2D" uid="uid://db5rralgxgipr" path="res://Images/Props/Level1/banco-tipo-1.png" id="1_axf8u"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_axf8u"]
 

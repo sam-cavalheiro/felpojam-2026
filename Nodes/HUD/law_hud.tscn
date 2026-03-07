@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bncog4belnk33"]
+
+[ext_resource type="Texture2D" uid="uid://bbgamnas0c4e" path="res://Images/Laws/law_background.png" id="1_i0ttc"]
+[ext_resource type="Script" uid="uid://4s7jtu20ftsi" path="res://Scripts/law_hud.gd" id="1_m7d15"]
+[ext_resource type="Texture2D" uid="uid://f6eh43jkths3" path="res://Images/Laws/law_0.png" id="2_dtw2o"]
+[ext_resource type="Texture2D" uid="uid://b6lioopvny1c8" path="res://Images/Laws/law_1.png" id="3_jwjxg"]
+[ext_resource type="Texture2D" uid="uid://bt06vum00h5vp" path="res://Images/Laws/law_2.png" id="4_ui633"]
+[ext_resource type="Texture2D" uid="uid://bs3hk564nsm03" path="res://Images/Laws/law_3.png" id="5_3ht7c"]
+[ext_resource type="Shortcut" uid="uid://cone2ur3q4uby" path="res://Shortcuts/back_shortcut.tres" id="5_xe6sr"]
+[ext_resource type="Texture2D" uid="uid://5awlf52leby0" path="res://Images/Laws/law_4.png" id="6_rotgs"]
+[ext_resource type="Texture2D" uid="uid://ci71so37p2l8u" path="res://Images/Laws/law_5.png" id="7_fuupw"]
+[ext_resource type="Texture2D" uid="uid://bvwb8xm1t6p4e" path="res://Images/Laws/law_6.png" id="8_ctx71"]
+[ext_resource type="Texture2D" uid="uid://hosf8dmxdq3" path="res://Images/Laws/law_7.png" id="9_dn6st"]
+[ext_resource type="Texture2D" uid="uid://cyuck5jw611h1" path="res://Images/Laws/law_8.png" id="10_l37m0"]
+[ext_resource type="Texture2D" uid="uid://dayqw06j1vu2u" path="res://Images/Laws/law_9.png" id="11_bmoek"]
+[ext_resource type="Texture2D" uid="uid://bdsk1gikh8fmf" path="res://Images/Laws/law_10.png" id="12_yx08u"]
+[ext_resource type="Texture2D" uid="uid://beouddwfd6m5e" path="res://Images/Laws/law_11.png" id="13_rc0rn"]
+
+[node name="LawHUD" type="Control" unique_id=164234758]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7d15")
+law_text_textures = Array[Texture2D]([ExtResource("2_dtw2o"), ExtResource("3_jwjxg"), ExtResource("4_ui633"), ExtResource("5_3ht7c"), ExtResource("6_rotgs"), ExtResource("7_fuupw"), ExtResource("8_ctx71"), ExtResource("9_dn6st"), ExtResource("10_l37m0"), ExtResource("11_bmoek"), ExtResource("12_yx08u"), ExtResource("13_rc0rn")])
+
+[node name="BG_Texture" type="TextureRect" parent="." unique_id=737458686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i0ttc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LawText_Texture" type="TextureRect" parent="." unique_id=444605682]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dtw2o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StampClickArea" type="Control" parent="." unique_id=70171834]
+anchors_preset = 0
+anchor_left = 0.4019097
+anchor_top = 0.60493827
+anchor_right = 0.5868056
+anchor_bottom = 0.7407407
+offset_bottom = 3.0517578e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit_Button" type="Button" parent="." unique_id=2088770832]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6675347
+anchor_right = 0.6944444
+anchor_bottom = 0.047839507
+shortcut = ExtResource("5_xe6sr")
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

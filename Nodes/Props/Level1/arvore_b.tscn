@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bebtaw2xclv2w"]
 
-[ext_resource type="Texture2D" uid="uid://pl1bh7kbsp0x" path="res://Images/Props/level_1/arvore-tipo-2.png" id="1_8ip1t"]
+[ext_resource type="Texture2D" uid="uid://pl1bh7kbsp0x" path="res://Images/Props/Level1/arvore-tipo-2.png" id="1_8ip1t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ip1t"]
 radius = 0.81405944

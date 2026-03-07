@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfa2dyc1sk1hy"]
+
+[ext_resource type="Texture2D" uid="uid://b6lbrd0fj6wjg" path="res://Images/Props/Level2/baleia-estatua.png" id="1_spoam"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_spoam"]
+radius = 3.4663086
+height = 17.251404
+
+[node name="Baleia" type="StaticBody3D" unique_id=1792322880]
+transform = Transform3D(0.186, 0, 0, 0, 0.08875153, 0.16345999, 0, -0.16345999, 0.08875153, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=412622110]
+visible = false
+texture = ExtResource("1_spoam")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=32899049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2044778, -1.1920929e-07)
+render_priority = 2
+texture = ExtResource("1_spoam")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 339)
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=344241073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6267146, 1.17346644e-07)
+texture = ExtResource("1_spoam")
+region_enabled = true
+region_rect = Rect2(0, 339, 1920, 630)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1338866075]
+transform = Transform3D(-4.3711378e-08, -0.9999894, 0, 0.99997497, -4.3710862e-08, 5.3942204e-06, -1.6719103e-05, 2.3092639e-14, 0.9999894, -0.48012772, -0.53284264, -1.9944344)
+shape = SubResource("CapsuleShape3D_spoam")

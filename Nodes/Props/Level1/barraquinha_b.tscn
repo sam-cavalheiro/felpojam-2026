@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1nx03gldx7v"]
 
-[ext_resource type="Texture2D" uid="uid://c6dxw0ipmb4js" path="res://Images/Props/level_1/barraquinha-tipo-2.png" id="1_mpeql"]
+[ext_resource type="Texture2D" uid="uid://c6dxw0ipmb4js" path="res://Images/Props/Level1/barraquinha-tipo-2.png" id="1_mpeql"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mpeql"]
 size = Vector3(4.5492554, 2.3930054, 1.949707)

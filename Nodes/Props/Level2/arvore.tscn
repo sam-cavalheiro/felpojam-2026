@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cocwwv6vykvhg"]
+
+[ext_resource type="Texture2D" uid="uid://bjkd74xnhdhok" path="res://Images/Props/Level2/arvore-pequena-cidade.png" id="1_2qeex"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jqtmc"]
+radius = 1.7517779
+
+[node name="Arvore" type="StaticBody3D" unique_id=2006599772]
+transform = Transform3D(0.091, 0, 0, 0, 0.043421447, 0.07997236, 0, -0.07997236, 0.043421447, 0, 0, 0)
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=292926426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6327575, 5.9604645e-08)
+render_priority = 2
+texture = ExtResource("1_2qeex")
+region_enabled = true
+region_rect = Rect2(0, 0, 1192, 774)
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1745765297]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.740944, -1.7881393e-07)
+texture = ExtResource("1_2qeex")
+region_enabled = true
+region_rect = Rect2(0, 774, 1192, 306)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871031556]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, -1.2407354, -4.0454326, -0.578838)
+shape = SubResource("SphereShape3D_jqtmc")

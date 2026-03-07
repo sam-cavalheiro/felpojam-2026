@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dey06h70vnw6w"]
+
+[ext_resource type="Texture2D" uid="uid://b8a5i3ajh0ttk" path="res://Images/Props/Level4/cubículo.png" id="1_5pl2i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5pl2i"]
+radius = 3.9547563
+
+[node name="Cubiculo" type="StaticBody3D" unique_id=2091191830]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=943508884]
+texture = ExtResource("1_5pl2i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1207732752]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.99997425, -5.9604645e-08, 0, 5.9604645e-08, 0.99997425, 0.022460345, -1.2928568, -0.62011725)
+shape = SubResource("SphereShape3D_5pl2i")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b6x7yfdat0e7w"]
+
+[ext_resource type="Texture2D" uid="uid://ci1w1ix855l7v" path="res://Images/Props/Level1/poste.png" id="1_tmlc7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tmlc7"]
+
+[node name="Poste1" type="StaticBody3D" unique_id=1462842742]
+transform = Transform3D(0.581, 0, 0, 0, 0.27722922, 0.51059276, 0, -0.51059276, 0.27722922, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=828572671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6784863, 0)
+render_priority = 2
+texture = ExtResource("1_tmlc7")
+region_enabled = true
+region_rect = Rect2(0, 0, 252, 500)
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=222469405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33988088, 0)
+texture = ExtResource("1_tmlc7")
+region_enabled = true
+region_rect = Rect2(0, 500, 252, 168)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1210612877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07080704, 0.24257882, -0.08881586)
+shape = SubResource("SphereShape3D_tmlc7")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://j27s4bed17d0"]
+
+[ext_resource type="Texture2D" uid="uid://cfkwkpgf5q1df" path="res://Images/Props/Level2/predio3.png" id="1_f05ws"]
+
+[node name="PredioC" type="Node3D" unique_id=1582706559]
+transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1508687825]
+render_priority = 2
+texture = ExtResource("1_f05ws")

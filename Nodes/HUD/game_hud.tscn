@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://kcfowtj7qal7"]
+
+[ext_resource type="PackedScene" uid="uid://687hp52q7pwn" path="res://Nodes/HUD/stamper_cursor_hud.tscn" id="1_7ixv5"]
+[ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/HUD/pause_menu.tscn" id="2_7hie2"]
+[ext_resource type="PackedScene" uid="uid://bncog4belnk33" path="res://Nodes/HUD/law_hud.tscn" id="3_5mv6l"]
+[ext_resource type="PackedScene" uid="uid://b7ow6lp68kxwp" path="res://Nodes/HUD/tv_event_hud.tscn" id="4_08qxj"]
+[ext_resource type="PackedScene" uid="uid://bfhi8khb8p6k7" path="res://Nodes/HUD/stamps_hud.tscn" id="5_efwke"]
+
+[node name="GameHUD" type="Control" unique_id=1834046072]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StamperCursorHUD" parent="." unique_id=1571985949 instance=ExtResource("1_7ixv5")]
+layout_mode = 1
+
+[node name="PauseMenu" parent="." unique_id=1779303702 instance=ExtResource("2_7hie2")]
+layout_mode = 1
+
+[node name="LawHUD" parent="." unique_id=164234758 instance=ExtResource("3_5mv6l")]
+layout_mode = 1
+
+[node name="TVEventHUD" parent="." unique_id=647537413 instance=ExtResource("4_08qxj")]
+layout_mode = 1
+
+[node name="StampsHUD" parent="." unique_id=1697470788 instance=ExtResource("5_efwke")]
+layout_mode = 1

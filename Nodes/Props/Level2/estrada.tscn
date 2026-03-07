@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dndhcwd5wvm5"]
+
+[ext_resource type="Texture2D" uid="uid://cuqwghtb46e2k" path="res://Images/Props/Level2/Rua.png" id="1_f3kmi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mewcj"]
+size = Vector3(49.20291, 12.970707, 1)
+
+[node name="Estrada" type="Sprite3D" unique_id=759174777]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0, 0, 0)
+texture = ExtResource("1_f3kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2107943070]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=705910429]
+transform = Transform3D(0.83183813, 0.5550187, 2.4260634e-08, -0.5550187, 0.83183813, -7.350579e-09, -2.4260629e-08, -7.350586e-09, 1, -3.452, -9.001, -0.5)
+shape = SubResource("BoxShape3D_mewcj")

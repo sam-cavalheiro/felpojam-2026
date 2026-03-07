@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1ukagcm7l4vb" path="res://Scripts/player.gd" id="1_qlfej"]
 [ext_resource type="SpriteFrames" uid="uid://bp1bgtx56v04v" path="res://SpriteFrames/gamba_sprite_frames.tres" id="3_pie2b"]
+[ext_resource type="PackedScene" uid="uid://bmuntb78pmtg8" path="res://Nodes/stamp_inventory_controller.tscn" id="3_sfp35"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pie2b"]
 radius = 3.5771585
@@ -10,6 +11,7 @@ radius = 3.5771585
 transform = Transform3D(0.111, 0, 0, 0, 0.111, 0, 0, 0, 0.111, 0, 0, 0)
 script = ExtResource("1_qlfej")
 speed = 2.5
+stamp_3d_base_file = "uid://bxwhoictd6bf"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1633106118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48934954, 0)
@@ -20,3 +22,11 @@ billboard = 1
 sprite_frames = ExtResource("3_pie2b")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="StampInventoryController" parent="." unique_id=793465676 instance=ExtResource("3_sfp35")]
+
+[node name="LeftStampPoint" type="Marker3D" parent="." unique_id=2113817802]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 5, 0, 0)
+
+[node name="RightStampPoint" type="Marker3D" parent="." unique_id=1794305381]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -5, 0, 0)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccg1r5vucecya"]
 
-[ext_resource type="Texture2D" uid="uid://csqokwuscuf63" path="res://Images/Props/level_1/floresta topo mapa1.png" id="1_qtxbg"]
+[ext_resource type="Texture2D" uid="uid://csqokwuscuf63" path="res://Images/Props/Level1/floresta topo mapa1.png" id="1_qtxbg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qtxbg"]
 size = Vector3(42.718147, 23.220184, 22.124847)
