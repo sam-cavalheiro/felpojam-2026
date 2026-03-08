@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 	$AcceptDialog.popup_centered()
 	
-	for dir_file in DirAccess.get_files_at(SCENES_PATH):
+	for dir_file in ResourceLoader.list_directory(SCENES_PATH):
 		if dir_file.ends_with(".tscn"):
 			$PopupMenu.add_item(dir_file)
 
