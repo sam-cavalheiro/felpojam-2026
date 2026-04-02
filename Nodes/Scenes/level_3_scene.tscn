@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dilk6llrogdp7"]
 
-[ext_resource type="PackedScene" uid="uid://kcfowtj7qal7" path="res://Nodes/HUD/game_hud.tscn" id="1_w87o0"]
+[ext_resource type="PackedScene" uid="uid://kcfowtj7qal7" path="res://Nodes/UI/game_hud.tscn" id="1_w87o0"]
 [ext_resource type="Material" uid="uid://ol48iwchpjhv" path="res://Materials/outdoor_material.tres" id="2_vhkie"]
 [ext_resource type="PackedScene" uid="uid://dtou7txs4ge3h" path="res://Nodes/camera_follower_indoor.tscn" id="3_lxy1u"]
 [ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="4_cxg56"]

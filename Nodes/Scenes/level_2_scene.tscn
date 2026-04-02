@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfxbasxof0n4h"]
 
-[ext_resource type="PackedScene" uid="uid://kcfowtj7qal7" path="res://Nodes/HUD/game_hud.tscn" id="1_6r31w"]
+[ext_resource type="PackedScene" uid="uid://kcfowtj7qal7" path="res://Nodes/UI/game_hud.tscn" id="1_6r31w"]
 [ext_resource type="Material" uid="uid://ckvwq7l6kg731" path="res://Materials/grass_material.tres" id="2_m645f"]
 [ext_resource type="PackedScene" uid="uid://dwgu8taso2e0w" path="res://Nodes/camera_follower.tscn" id="3_yoc1y"]
 [ext_resource type="PackedScene" uid="uid://bd8ef6jr5wmvs" path="res://Nodes/player.tscn" id="4_pdwhg"]
