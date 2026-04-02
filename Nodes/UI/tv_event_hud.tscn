@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7ow6lp68kxwp"]
 
 [ext_resource type="Texture2D" uid="uid://dpb7oe6qrqwhc" path="res://Images/TVEvents/tv_event_no_news.jpg" id="1_bknkp"]
-[ext_resource type="Script" uid="uid://co11wb71a4y51" path="res://Scripts/tv_event_hud.gd" id="1_rssa2"]
+[ext_resource type="Script" uid="uid://co11wb71a4y51" path="res://Scripts/UI/tv_event_hud.gd" id="1_rssa2"]
 [ext_resource type="Shortcut" uid="uid://cone2ur3q4uby" path="res://Shortcuts/back_shortcut.tres" id="2_qf67x"]
 
 [node name="TVEventHUD" type="Control" unique_id=647537413]

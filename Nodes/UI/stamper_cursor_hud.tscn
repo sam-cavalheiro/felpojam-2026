@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://687hp52q7pwn"]
 
-[ext_resource type="Script" uid="uid://qxxbvyachduo" path="res://Scripts/stamper_cursor_hud.gd" id="1_55584"]
-[ext_resource type="Texture2D" uid="uid://clxiimxj4lvho" path="res://Images/stamp_cursor.png" id="2_brh25"]
+[ext_resource type="Script" uid="uid://qxxbvyachduo" path="res://Scripts/UI/stamper_cursor_hud.gd" id="1_55584"]
+[ext_resource type="Texture2D" uid="uid://clxiimxj4lvho" path="res://Images/UI/stamp_cursor.png" id="2_brh25"]
 
 [node name="StamperCursorHUD" type="Control" unique_id=1571985949]
 process_mode = 2

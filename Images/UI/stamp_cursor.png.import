@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clxiimxj4lvho"
-path.s3tc="res://.godot/imported/stamp_cursor.png-f8501d1476efddb95cccd4d04c76f9a9.s3tc.ctex"
+path.s3tc="res://.godot/imported/stamp_cursor.png-707ac39ff3a72120020a8ce2919ef0e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/stamp_cursor.png"
-dest_files=["res://.godot/imported/stamp_cursor.png-f8501d1476efddb95cccd4d04c76f9a9.s3tc.ctex"]
+source_file="res://Images/UI/stamp_cursor.png"
+dest_files=["res://.godot/imported/stamp_cursor.png-707ac39ff3a72120020a8ce2919ef0e1.s3tc.ctex"]
 
 [params]
 

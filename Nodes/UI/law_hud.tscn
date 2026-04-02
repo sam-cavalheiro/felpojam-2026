@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bncog4belnk33"]
 
 [ext_resource type="Texture2D" uid="uid://bbgamnas0c4e" path="res://Images/Laws/law_background.png" id="1_i0ttc"]
-[ext_resource type="Script" uid="uid://4s7jtu20ftsi" path="res://Scripts/law_hud.gd" id="1_m7d15"]
+[ext_resource type="Script" uid="uid://4s7jtu20ftsi" path="res://Scripts/UI/law_hud.gd" id="1_m7d15"]
 [ext_resource type="Texture2D" uid="uid://f6eh43jkths3" path="res://Images/Laws/law_0.png" id="2_dtw2o"]
 [ext_resource type="Texture2D" uid="uid://b6lioopvny1c8" path="res://Images/Laws/law_1.png" id="3_jwjxg"]
 [ext_resource type="Texture2D" uid="uid://bt06vum00h5vp" path="res://Images/Laws/law_2.png" id="4_ui633"]

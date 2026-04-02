@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://kcfowtj7qal7"]
 
-[ext_resource type="PackedScene" uid="uid://687hp52q7pwn" path="res://Nodes/HUD/stamper_cursor_hud.tscn" id="1_7ixv5"]
-[ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/HUD/pause_menu.tscn" id="2_7hie2"]
-[ext_resource type="PackedScene" uid="uid://bncog4belnk33" path="res://Nodes/HUD/law_hud.tscn" id="3_5mv6l"]
-[ext_resource type="PackedScene" uid="uid://b7ow6lp68kxwp" path="res://Nodes/HUD/tv_event_hud.tscn" id="4_08qxj"]
-[ext_resource type="PackedScene" uid="uid://bfhi8khb8p6k7" path="res://Nodes/HUD/stamps_hud.tscn" id="5_efwke"]
+[ext_resource type="PackedScene" uid="uid://687hp52q7pwn" path="res://Nodes/UI/stamper_cursor_hud.tscn" id="1_7ixv5"]
+[ext_resource type="PackedScene" uid="uid://76py7bgdj0nb" path="res://Nodes/UI/pause_menu.tscn" id="2_7hie2"]
+[ext_resource type="PackedScene" uid="uid://bncog4belnk33" path="res://Nodes/UI/law_hud.tscn" id="3_5mv6l"]
+[ext_resource type="PackedScene" uid="uid://b7ow6lp68kxwp" path="res://Nodes/UI/tv_event_hud.tscn" id="4_08qxj"]
+[ext_resource type="PackedScene" uid="uid://bfhi8khb8p6k7" path="res://Nodes/UI/stamps_hud.tscn" id="5_efwke"]
 
 [node name="GameHUD" type="Control" unique_id=1834046072]
 layout_mode = 3
