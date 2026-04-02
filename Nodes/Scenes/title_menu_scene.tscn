@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://cadywn7bisd2v"]
 
 [ext_resource type="Script" uid="uid://b18w17ism1t1u" path="res://Scripts/title_menu_scene.gd" id="1_q6vkm"]
-[ext_resource type="Script" uid="uid://cke511qrm5yyd" path="res://Scripts/credits_popup.gd" id="3_flkoa"]
-[ext_resource type="Shortcut" uid="uid://cone2ur3q4uby" path="res://Shortcuts/back_shortcut.tres" id="4_anpos"]
+[ext_resource type="Texture2D" uid="uid://d26m7bsrbxxsr" path="res://Images/UI/title_bg.jpg" id="2_anpos"]
+[ext_resource type="Texture2D" uid="uid://cqj6nvw3ubsd5" path="res://Images/UI/title_template.jpg" id="2_j8ujf"]
+[ext_resource type="Theme" uid="uid://d3clp1ysbivd7" path="res://Themes/box_container_theme.tres" id="3_1h33l"]
+[ext_resource type="Script" uid="uid://cke511qrm5yyd" path="res://Scripts/UI/credits_popup.gd" id="3_flkoa"]
+[ext_resource type="PackedScene" uid="uid://biktjuifanhhg" path="res://Nodes/UI/game_button.tscn" id="4_1h33l"]
+[ext_resource type="Texture2D" uid="uid://b4p575conl44n" path="res://Images/UI/title_logo.png" id="4_h8bof"]
+[ext_resource type="Texture2D" uid="uid://do6crq2ff4v8g" path="res://Images/UI/credits_bg.png" id="8_bcff6"]
+[ext_resource type="FontFile" uid="uid://dvj73ss0f7bl" path="res://FontFiles/Renju.otf" id="9_o0tty"]
+[ext_resource type="Shortcut" uid="uid://cone2ur3q4uby" path="res://Shortcuts/back_shortcut.tres" id="10_bcff6"]
 
 [node name="TitleMenuScene" type="Control" unique_id=1122809056]
 layout_mode = 3
@@ -16,51 +23,78 @@ size_flags_vertical = 6
 script = ExtResource("1_q6vkm")
 game_scene = "uid://c3063n0it3fv2"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1171718256]
+[node name="template" type="TextureRect" parent="." unique_id=1895487145]
+visible = false
+modulate = Color(1, 0.75686276, 0.7176471, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j8ujf")
+expand_mode = 1
+
+[node name="Background_Texture" type="TextureRect" parent="." unique_id=741612903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_anpos")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1610044154]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -286.75
-offset_top = 144.0
-offset_right = 286.75
-offset_bottom = 265.0
+offset_left = -306.49567
+offset_top = 53.0
+offset_right = 306.49567
+offset_bottom = 318.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 95
-bbcode_enabled = true
-text = "[u]Carimbá[/u]"
-scroll_active = false
-horizontal_alignment = 1
+texture = ExtResource("4_h8bof")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=68658985]
 clip_contents = true
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -118.0
-offset_top = -229.0
-offset_right = 118.0
-offset_bottom = -128.0
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = 33.0
+offset_right = 148.00037
+offset_bottom = 268.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_1h33l")
 metadata/_edit_group_ = true
 
-[node name="Play_Button" type="Button" parent="VBoxContainer" unique_id=1223189946]
+[node name="Play_Button" parent="VBoxContainer" unique_id=655849564 instance=ExtResource("4_1h33l")]
 layout_mode = 2
-text = "Jogar!"
+focus_neighbor_top = NodePath("../Quit_Button")
+focus_neighbor_bottom = NodePath("../Credits_Button")
+text = "[JOGAR]"
+start_focused = true
 
-[node name="Credits_Button" type="Button" parent="VBoxContainer" unique_id=1763515513]
+[node name="Credits_Button" parent="VBoxContainer" unique_id=1313509883 instance=ExtResource("4_1h33l")]
 layout_mode = 2
-text = "Créditos"
+focus_neighbor_top = NodePath("../Play_Button")
+focus_neighbor_bottom = NodePath("../Quit_Button")
+text = "[créditos]"
 
-[node name="Quit_Button" type="Button" parent="VBoxContainer" unique_id=2121367315]
+[node name="Quit_Button" parent="VBoxContainer" unique_id=1929852875 instance=ExtResource("4_1h33l")]
 layout_mode = 2
-text = "Sair"
+focus_neighbor_top = NodePath("../Credits_Button")
+focus_neighbor_bottom = NodePath("../Play_Button")
+text = "[sair]"
 
 [node name="Créditos" type="Control" parent="." unique_id=2054660805]
 visible = false
@@ -81,41 +115,54 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Holder_ColorRect" type="ColorRect" parent="Créditos" unique_id=1529917500]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -307.0
-offset_top = -250.0
-offset_right = 231.0
-offset_bottom = 250.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.14702421, 0.14711371, 0.20062512, 1)
-
-[node name="Title" type="RichTextLabel" parent="Créditos/Holder_ColorRect" unique_id=1079020961]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 7.25
-offset_bottom = 42.75
-grow_horizontal = 2
-bbcode_enabled = true
-text = "[b]CRÉDITOS[/b]"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="People_Credits" type="RichTextLabel" parent="Créditos/Holder_ColorRect" unique_id=1785628883]
+[node name="Holder_TextureRect" type="TextureRect" parent="Créditos" unique_id=858436586]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.04822695
-anchor_top = 0.096
-anchor_right = 0.5315985
-anchor_bottom = 0.902
+anchor_left = 0.29730904
+anchor_right = 0.70269096
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("8_bcff6")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="RichTextLabel" parent="Créditos/Holder_TextureRect" unique_id=1079020961]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.03549383
+anchor_right = 1.0
+anchor_bottom = 0.090277776
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("9_o0tty")
+theme_override_fonts/bold_font = ExtResource("9_o0tty")
+theme_override_font_sizes/normal_font_size = 26
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "CRÉDITOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits_Holder" type="Control" parent="Créditos/Holder_TextureRect" unique_id=1372491480]
+layout_mode = 1
+anchor_left = 0.13811563
+anchor_top = 0.094135806
+anchor_right = 0.94004285
+anchor_bottom = 0.93209875
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits" type="RichTextLabel" parent="Créditos/Holder_TextureRect/Credits_Holder" unique_id=1785628883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[u]Animação[/u]
 Rayssa \"Valkyray\" Moreira
@@ -132,42 +179,40 @@ Fernanda \"Fields\" Campos
 Sam Cavalheiro
 
 [u]Sound Design[/u]
-Fernanda \"Fields\" Campos"
-scroll_active = false
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+Fernanda \"Fields\" Campos
 
-[node name="License_Credits" type="RichTextLabel" parent="Créditos/Holder_ColorRect" unique_id=1334463027]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.54460967
-anchor_top = 0.096
-anchor_right = 0.9703604
-anchor_bottom = 0.902
-grow_vertical = 2
-bbcode_enabled = true
-text = "(Crédito das licenças)"
-scroll_active = false
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[center][font_size=12]A fonte [b]Renju[/b] é mantida sob a licença CC0 1.0
 
-[node name="Back_Button" type="Button" parent="Créditos/Holder_ColorRect" unique_id=1215367911]
+[b]Carimbá[/b] é mantido sob a licença MIT
+© 2026 Sam Cavalheiro[/font_size][/center]"
+scroll_active = false
+metadata/_edit_lock_ = true
+
+[node name="Back_Button" parent="Créditos/Holder_TextureRect/Credits_Holder" unique_id=222364056 instance=ExtResource("4_1h33l")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -27.5
-offset_top = -42.0
-offset_right = 27.5
-offset_bottom = -11.0
+offset_left = -75.5
+offset_top = -64.0
+offset_right = 75.5
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
-shortcut = ExtResource("4_anpos")
-text = "Voltar"
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+theme_override_font_sizes/font_size = 40
+shortcut = ExtResource("10_bcff6")
+text = "[voltar]"
 
 [connection signal="pressed" from="VBoxContainer/Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits_Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="Créditos/Holder_ColorRect/Back_Button" to="Créditos" method="_on_back_button_pressed"]
+[connection signal="visibility_changed" from="Créditos" to="Créditos" method="_on_visibility_changed"]
+[connection signal="pressed" from="Créditos/Holder_TextureRect/Credits_Holder/Back_Button" to="Créditos" method="_on_back_button_pressed"]

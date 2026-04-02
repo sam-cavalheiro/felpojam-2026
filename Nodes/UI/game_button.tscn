@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://biktjuifanhhg"]
+
+[ext_resource type="Theme" uid="uid://ck3u4t3b3ugw0" path="res://Themes/button_theme.tres" id="1_lyiek"]
+[ext_resource type="Script" uid="uid://tpxnlomouuma" path="res://Scripts/UI/game_button.gd" id="2_lyiek"]
+
+[node name="GameButton" type="Button" unique_id=655849564]
+theme = ExtResource("1_lyiek")
+action_mode = 0
+text = "[botão]"
+script = ExtResource("2_lyiek")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

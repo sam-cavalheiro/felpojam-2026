@@ -1,0 +1,25 @@
+[gd_resource type="Theme" format=3 uid="uid://ck3u4t3b3ugw0"]
+
+[ext_resource type="FontFile" uid="uid://dvj73ss0f7bl" path="res://FontFiles/Renju.otf" id="1_oxmtg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hxum"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgr3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7sgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2r6j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mumj6"]
+
+[resource]
+Button/colors/font_color = Color(0.14901961, 0.5803922, 0.2627451, 1)
+Button/colors/font_focus_color = Color(0.47058824, 0.09019608, 0.09019608, 1)
+Button/colors/font_hover_color = Color(0.47058824, 0.09019608, 0.09019608, 1)
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_oxmtg")
+Button/styles/disabled = SubResource("StyleBoxEmpty_0hxum")
+Button/styles/focus = SubResource("StyleBoxEmpty_fgr3t")
+Button/styles/hover = SubResource("StyleBoxEmpty_g7sgh")
+Button/styles/normal = SubResource("StyleBoxEmpty_g2r6j")
+Button/styles/pressed = SubResource("StyleBoxEmpty_mumj6")
