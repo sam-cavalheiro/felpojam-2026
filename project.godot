@@ -24,7 +24,6 @@ CheatHandler="*uid://c6eav8jdgtj1n"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [input]
