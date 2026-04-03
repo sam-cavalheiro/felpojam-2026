@@ -8,8 +8,6 @@ func _ready() -> void:
 		queue_free()
 		return
 	
-	$AcceptDialog.popup_centered()
-	
 	for dir_file in ResourceLoader.list_directory(SCENES_PATH):
 		if dir_file.ends_with(".tscn"):
 			$PopupMenu.add_item(dir_file)
