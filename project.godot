@@ -21,6 +21,7 @@ LawsManager="*uid://by0wmqpcekv6g"
 StampsManager="*uid://ce1wl5ivxkpyp"
 TVEventManager="*uid://beklbc66uxx4l"
 CheatHandler="*uid://c6eav8jdgtj1n"
+AudioManager="*uid://7x34q7wqqsxy"
 
 [display]
 
@@ -179,4 +180,5 @@ pause={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 textures/main_scene="uid://byapiahiuj4nx"

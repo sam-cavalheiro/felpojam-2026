@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://7x34q7wqqsxy"]
+
+[ext_resource type="AudioStream" uid="uid://dh16fbn2rmixi" path="res://Audio/SE/cursor_move.wav" id="1_sgyfc"]
+[ext_resource type="AudioStream" uid="uid://bsdcnksvd0oyl" path="res://Audio/SE/cursor_confirm.wav" id="2_v0ohe"]
+[ext_resource type="AudioStream" uid="uid://ch41pcne6aau0" path="res://Audio/SE/stamp.wav" id="3_v0ohe"]
+[ext_resource type="AudioStream" uid="uid://cs4ibuye2u0e8" path="res://Audio/SE/pickup.wav" id="4_bw1kx"]
+
+[node name="AudioManager" type="Node" unique_id=293553884]
+process_mode = 3
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=461197481]
+position = Vector2(576, 324)
+current = true
+
+[node name="Audios" type="Node" parent="." unique_id=375828689]
+
+[node name="Interface" type="Node" parent="Audios" unique_id=557463217]
+
+[node name="CursorMoveSE" type="AudioStreamPlayer" parent="Audios/Interface" unique_id=77215424]
+stream = ExtResource("1_sgyfc")
+volume_db = -10.0
+
+[node name="CursorConfirmSE" type="AudioStreamPlayer" parent="Audios/Interface" unique_id=1756076256]
+stream = ExtResource("2_v0ohe")
+volume_db = -5.0
+
+[node name="StampSE" type="AudioStreamPlayer2D" parent="Audios" unique_id=1666254589]
+stream = ExtResource("3_v0ohe")
+
+[node name="StampPickupSE" type="AudioStreamPlayer" parent="Audios" unique_id=207854610]
+stream = ExtResource("4_bw1kx")
