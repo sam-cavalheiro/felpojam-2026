@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cimldpd0b0fgc"
 path.s3tc="res://.godot/imported/gamba_anim_run_1.png-b90869fa964a279fd36fe686238b6a5d.s3tc.ctex"
+path.etc2="res://.godot/imported/gamba_anim_run_1.png-b90869fa964a279fd36fe686238b6a5d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Animations/gamba_anim_run_1.png"
-dest_files=["res://.godot/imported/gamba_anim_run_1.png-b90869fa964a279fd36fe686238b6a5d.s3tc.ctex"]
+dest_files=["res://.godot/imported/gamba_anim_run_1.png-b90869fa964a279fd36fe686238b6a5d.s3tc.ctex", "res://.godot/imported/gamba_anim_run_1.png-b90869fa964a279fd36fe686238b6a5d.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://n48yjbynpu3w"
 path.s3tc="res://.godot/imported/Televisão TELA TRANSPARENTE.png-d5816e98d9f303d328496ba5132b47bf.s3tc.ctex"
+path.etc2="res://.godot/imported/Televisão TELA TRANSPARENTE.png-d5816e98d9f303d328496ba5132b47bf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level3/Televisão TELA TRANSPARENTE.png"
-dest_files=["res://.godot/imported/Televisão TELA TRANSPARENTE.png-d5816e98d9f303d328496ba5132b47bf.s3tc.ctex"]
+dest_files=["res://.godot/imported/Televisão TELA TRANSPARENTE.png-d5816e98d9f303d328496ba5132b47bf.s3tc.ctex", "res://.godot/imported/Televisão TELA TRANSPARENTE.png-d5816e98d9f303d328496ba5132b47bf.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://drsam7lg7vqa5"
 path.s3tc="res://.godot/imported/arbusto-tipo-2.png-ed565e70d66a5e3d30605a9d11a251de.s3tc.ctex"
+path.etc2="res://.godot/imported/arbusto-tipo-2.png-ed565e70d66a5e3d30605a9d11a251de.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level1/arbusto-tipo-2.png"
-dest_files=["res://.godot/imported/arbusto-tipo-2.png-ed565e70d66a5e3d30605a9d11a251de.s3tc.ctex"]
+dest_files=["res://.godot/imported/arbusto-tipo-2.png-ed565e70d66a5e3d30605a9d11a251de.s3tc.ctex", "res://.godot/imported/arbusto-tipo-2.png-ed565e70d66a5e3d30605a9d11a251de.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciijdlke56i63"
 path.s3tc="res://.godot/imported/televisão de frente v2.png-6a28d4487e7b93c2cad597dee7a71c16.s3tc.ctex"
+path.etc2="res://.godot/imported/televisão de frente v2.png-6a28d4487e7b93c2cad597dee7a71c16.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level3/televisão de frente v2.png"
-dest_files=["res://.godot/imported/televisão de frente v2.png-6a28d4487e7b93c2cad597dee7a71c16.s3tc.ctex"]
+dest_files=["res://.godot/imported/televisão de frente v2.png-6a28d4487e7b93c2cad597dee7a71c16.s3tc.ctex", "res://.godot/imported/televisão de frente v2.png-6a28d4487e7b93c2cad597dee7a71c16.etc2.ctex"]
 
 [params]
 

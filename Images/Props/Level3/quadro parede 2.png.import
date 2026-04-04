@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg8edyi4jai8p"
 path.s3tc="res://.godot/imported/quadro parede 2.png-989c84981c6d128e6191380614fbdd68.s3tc.ctex"
+path.etc2="res://.godot/imported/quadro parede 2.png-989c84981c6d128e6191380614fbdd68.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level3/quadro parede 2.png"
-dest_files=["res://.godot/imported/quadro parede 2.png-989c84981c6d128e6191380614fbdd68.s3tc.ctex"]
+dest_files=["res://.godot/imported/quadro parede 2.png-989c84981c6d128e6191380614fbdd68.s3tc.ctex", "res://.godot/imported/quadro parede 2.png-989c84981c6d128e6191380614fbdd68.etc2.ctex"]
 
 [params]
 

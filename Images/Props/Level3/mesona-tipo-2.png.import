@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://chavdj1euvmte"
 path.s3tc="res://.godot/imported/mesona-tipo-2.png-e8aac710ea30f177c35d3757908f3b89.s3tc.ctex"
+path.etc2="res://.godot/imported/mesona-tipo-2.png-e8aac710ea30f177c35d3757908f3b89.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level3/mesona-tipo-2.png"
-dest_files=["res://.godot/imported/mesona-tipo-2.png-e8aac710ea30f177c35d3757908f3b89.s3tc.ctex"]
+dest_files=["res://.godot/imported/mesona-tipo-2.png-e8aac710ea30f177c35d3757908f3b89.s3tc.ctex", "res://.godot/imported/mesona-tipo-2.png-e8aac710ea30f177c35d3757908f3b89.etc2.ctex"]
 
 [params]
 

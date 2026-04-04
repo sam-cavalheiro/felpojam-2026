@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://f2r3l2ck3agn"
 path.s3tc="res://.godot/imported/chão-textura-1.png-1236fa766bd1e7820e3ef710ba4957c1.s3tc.ctex"
+path.etc2="res://.godot/imported/chão-textura-1.png-1236fa766bd1e7820e3ef710ba4957c1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level2/chão-textura-1.png"
-dest_files=["res://.godot/imported/chão-textura-1.png-1236fa766bd1e7820e3ef710ba4957c1.s3tc.ctex"]
+dest_files=["res://.godot/imported/chão-textura-1.png-1236fa766bd1e7820e3ef710ba4957c1.s3tc.ctex", "res://.godot/imported/chão-textura-1.png-1236fa766bd1e7820e3ef710ba4957c1.etc2.ctex"]
 
 [params]
 

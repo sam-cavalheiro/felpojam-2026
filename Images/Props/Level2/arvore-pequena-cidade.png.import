@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjkd74xnhdhok"
 path.s3tc="res://.godot/imported/arvore-pequena-cidade.png-08d9c706911fd1701ad00599825ba2e4.s3tc.ctex"
+path.etc2="res://.godot/imported/arvore-pequena-cidade.png-08d9c706911fd1701ad00599825ba2e4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level2/arvore-pequena-cidade.png"
-dest_files=["res://.godot/imported/arvore-pequena-cidade.png-08d9c706911fd1701ad00599825ba2e4.s3tc.ctex"]
+dest_files=["res://.godot/imported/arvore-pequena-cidade.png-08d9c706911fd1701ad00599825ba2e4.s3tc.ctex", "res://.godot/imported/arvore-pequena-cidade.png-08d9c706911fd1701ad00599825ba2e4.etc2.ctex"]
 
 [params]
 

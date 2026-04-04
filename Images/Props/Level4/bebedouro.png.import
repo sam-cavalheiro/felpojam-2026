@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt107jaon1dql"
 path.s3tc="res://.godot/imported/bebedouro.png-ff84d572f53269c8e3269a68f7079143.s3tc.ctex"
+path.etc2="res://.godot/imported/bebedouro.png-ff84d572f53269c8e3269a68f7079143.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level4/bebedouro.png"
-dest_files=["res://.godot/imported/bebedouro.png-ff84d572f53269c8e3269a68f7079143.s3tc.ctex"]
+dest_files=["res://.godot/imported/bebedouro.png-ff84d572f53269c8e3269a68f7079143.s3tc.ctex", "res://.godot/imported/bebedouro.png-ff84d572f53269c8e3269a68f7079143.etc2.ctex"]
 
 [params]
 

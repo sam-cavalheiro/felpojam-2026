@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6lbrd0fj6wjg"
 path.s3tc="res://.godot/imported/baleia-estatua.png-c5e37d5e4e895a863b2c60c59986f8e7.s3tc.ctex"
+path.etc2="res://.godot/imported/baleia-estatua.png-c5e37d5e4e895a863b2c60c59986f8e7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level2/baleia-estatua.png"
-dest_files=["res://.godot/imported/baleia-estatua.png-c5e37d5e4e895a863b2c60c59986f8e7.s3tc.ctex"]
+dest_files=["res://.godot/imported/baleia-estatua.png-c5e37d5e4e895a863b2c60c59986f8e7.s3tc.ctex", "res://.godot/imported/baleia-estatua.png-c5e37d5e4e895a863b2c60c59986f8e7.etc2.ctex"]
 
 [params]
 

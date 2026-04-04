@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8a5i3ajh0ttk"
 path.s3tc="res://.godot/imported/cubículo.png-21010266575718f3c4e7c219a94b5664.s3tc.ctex"
+path.etc2="res://.godot/imported/cubículo.png-21010266575718f3c4e7c219a94b5664.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level4/cubículo.png"
-dest_files=["res://.godot/imported/cubículo.png-21010266575718f3c4e7c219a94b5664.s3tc.ctex"]
+dest_files=["res://.godot/imported/cubículo.png-21010266575718f3c4e7c219a94b5664.s3tc.ctex", "res://.godot/imported/cubículo.png-21010266575718f3c4e7c219a94b5664.etc2.ctex"]
 
 [params]
 

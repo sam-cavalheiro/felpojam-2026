@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://j5n55ctwaecw"
 path.s3tc="res://.godot/imported/prédio-PRINCIPAL.png-e58d59075e8c8b94956ecbba0d94adba.s3tc.ctex"
+path.etc2="res://.godot/imported/prédio-PRINCIPAL.png-e58d59075e8c8b94956ecbba0d94adba.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level2/prédio-PRINCIPAL.png"
-dest_files=["res://.godot/imported/prédio-PRINCIPAL.png-e58d59075e8c8b94956ecbba0d94adba.s3tc.ctex"]
+dest_files=["res://.godot/imported/prédio-PRINCIPAL.png-e58d59075e8c8b94956ecbba0d94adba.s3tc.ctex", "res://.godot/imported/prédio-PRINCIPAL.png-e58d59075e8c8b94956ecbba0d94adba.etc2.ctex"]
 
 [params]
 

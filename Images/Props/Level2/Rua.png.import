@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuqwghtb46e2k"
 path.s3tc="res://.godot/imported/Rua.png-cbeaa8e0389484633087aa6748923916.s3tc.ctex"
+path.etc2="res://.godot/imported/Rua.png-cbeaa8e0389484633087aa6748923916.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level2/Rua.png"
-dest_files=["res://.godot/imported/Rua.png-cbeaa8e0389484633087aa6748923916.s3tc.ctex"]
+dest_files=["res://.godot/imported/Rua.png-cbeaa8e0389484633087aa6748923916.s3tc.ctex", "res://.godot/imported/Rua.png-cbeaa8e0389484633087aa6748923916.etc2.ctex"]
 
 [params]
 

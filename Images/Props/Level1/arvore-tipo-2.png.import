@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://pl1bh7kbsp0x"
 path.s3tc="res://.godot/imported/arvore-tipo-2.png-f9d61a3a5831cd52117ac2502f9e21bc.s3tc.ctex"
+path.etc2="res://.godot/imported/arvore-tipo-2.png-f9d61a3a5831cd52117ac2502f9e21bc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level1/arvore-tipo-2.png"
-dest_files=["res://.godot/imported/arvore-tipo-2.png-f9d61a3a5831cd52117ac2502f9e21bc.s3tc.ctex"]
+dest_files=["res://.godot/imported/arvore-tipo-2.png-f9d61a3a5831cd52117ac2502f9e21bc.s3tc.ctex", "res://.godot/imported/arvore-tipo-2.png-f9d61a3a5831cd52117ac2502f9e21bc.etc2.ctex"]
 
 [params]
 

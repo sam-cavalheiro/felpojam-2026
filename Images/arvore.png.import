@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bualoxgeg7lup"
 path.s3tc="res://.godot/imported/arvore.png-8a847423a3a8f742dc6bf2555087250d.s3tc.ctex"
+path.etc2="res://.godot/imported/arvore.png-8a847423a3a8f742dc6bf2555087250d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/arvore.png"
-dest_files=["res://.godot/imported/arvore.png-8a847423a3a8f742dc6bf2555087250d.s3tc.ctex"]
+dest_files=["res://.godot/imported/arvore.png-8a847423a3a8f742dc6bf2555087250d.s3tc.ctex", "res://.godot/imported/arvore.png-8a847423a3a8f742dc6bf2555087250d.etc2.ctex"]
 
 [params]
 

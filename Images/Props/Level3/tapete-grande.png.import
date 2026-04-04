@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6vjcw6in2rhv"
 path.s3tc="res://.godot/imported/tapete-grande.png-670e221c62b18f224968fd2ffcec28d8.s3tc.ctex"
+path.etc2="res://.godot/imported/tapete-grande.png-670e221c62b18f224968fd2ffcec28d8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level3/tapete-grande.png"
-dest_files=["res://.godot/imported/tapete-grande.png-670e221c62b18f224968fd2ffcec28d8.s3tc.ctex"]
+dest_files=["res://.godot/imported/tapete-grande.png-670e221c62b18f224968fd2ffcec28d8.s3tc.ctex", "res://.godot/imported/tapete-grande.png-670e221c62b18f224968fd2ffcec28d8.etc2.ctex"]
 
 [params]
 

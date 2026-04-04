@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcdtjjh5o4h03"
 path.s3tc="res://.godot/imported/stamp_pickup_2.png-7deaf6dee68643144aa105afaf4db6b4.s3tc.ctex"
+path.etc2="res://.godot/imported/stamp_pickup_2.png-7deaf6dee68643144aa105afaf4db6b4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Stamps/stamp_pickup_2.png"
-dest_files=["res://.godot/imported/stamp_pickup_2.png-7deaf6dee68643144aa105afaf4db6b4.s3tc.ctex"]
+dest_files=["res://.godot/imported/stamp_pickup_2.png-7deaf6dee68643144aa105afaf4db6b4.s3tc.ctex", "res://.godot/imported/stamp_pickup_2.png-7deaf6dee68643144aa105afaf4db6b4.etc2.ctex"]
 
 [params]
 

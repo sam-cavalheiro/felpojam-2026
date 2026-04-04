@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://8thdaydklxcc"
 path.s3tc="res://.godot/imported/predio2.png-4799b48d61f7d2dd053dca4943a1ab74.s3tc.ctex"
+path.etc2="res://.godot/imported/predio2.png-4799b48d61f7d2dd053dca4943a1ab74.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/Props/Level2/predio2.png"
-dest_files=["res://.godot/imported/predio2.png-4799b48d61f7d2dd053dca4943a1ab74.s3tc.ctex"]
+dest_files=["res://.godot/imported/predio2.png-4799b48d61f7d2dd053dca4943a1ab74.s3tc.ctex", "res://.godot/imported/predio2.png-4799b48d61f7d2dd053dca4943a1ab74.etc2.ctex"]
 
 [params]
 
