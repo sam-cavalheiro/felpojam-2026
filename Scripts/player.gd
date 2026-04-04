@@ -44,6 +44,9 @@ func _process(delta: float) -> void:
 			stamp_inst.global_position = result.position + Vector3(0, 0.05, 0)
 			stamp_inst.look_at(result.position + result.normal)
 			stamp_inst.rotate_y(deg_to_rad(90))
+			
+			AudioManager.get_node("Audios/StampSE").position = get_viewport().get_camera_3d().unproject_position(global_position)
+			AudioManager.get_node("Audios/StampSE").play()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

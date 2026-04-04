@@ -8,5 +8,8 @@ theme = ExtResource("1_lyiek")
 action_mode = 0
 text = "[botão]"
 script = ExtResource("2_lyiek")
+start_focused = null
 
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

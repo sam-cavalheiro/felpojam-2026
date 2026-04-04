@@ -28,7 +28,7 @@ func setup_and_show(interactible_buttons: Array[BaseButton], stamp_marks: Array[
 	for child in $StampMark_Holder.get_children():
 		child.queue_free()
 	for stamp_position in stamp_marks:
-		stamp_mark(stamp_position.stamp_id, stamp_position.stamp_position)
+		stamp_mark(stamp_position.stamp_id, stamp_position.stamp_position, false)
 	
 	show()
 
@@ -78,22 +78,28 @@ func button_process(buttons: Array[BaseButton]) -> bool:
 	return false
 
 # Retorna true se conseguiu carimbar
-func stamp_mark(stamp_id: int, stamp_posiion: Vector2) -> bool:
+func stamp_mark(stamp_id: int, stamp_position: Vector2, play_se: = true) -> bool:
 	if stamp_id < 0:
 		return false
 	
 	var mark_inst: TextureRect = stamp_mark_loaded.instantiate()
 	$StampMark_Holder.add_child(mark_inst)
 	mark_inst.texture = StampsManager.stamp_marks[stamp_id]
-	mark_inst.global_position = stamp_posiion
+	mark_inst.global_position = stamp_position
+	
+	if play_se:
+		AudioManager.get_node("Audios/StampSE").position = stamp_position
+		AudioManager.get_node("Audios/StampSE").play()
+	
 	return true
 
-func stamp_mark_at_cursor_with_current() -> bool:
+func stamp_mark_at_cursor_with_current(play_se: = true) -> bool:
 	if StampsManager.current_equip_index < 0:
 		return false
 	
 	return stamp_mark(StampsManager.collected_stamps[StampsManager.current_equip_index],
-					 get_cursor_mark_position())
+					 get_cursor_mark_position(),
+					 play_se)
 
 func get_cursor_mark_position() -> Vector2:
 	return stamp_cursor.global_position + stamp_cursor.pivot_offset - (stamp_mark_size * 0.5)
