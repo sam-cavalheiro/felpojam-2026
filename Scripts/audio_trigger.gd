@@ -25,6 +25,3 @@ func on_trigger() -> void:
 	if audio_player.stream != stream:
 		audio_player.stream = stream
 		audio_player.play()
-	
-	if destroy_after_trigger:
-		queue_free()
