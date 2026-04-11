@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dkewglwjofnbm" path="res://Nodes/Props/tapete_elevador.tscn" id="11_qqatm"]
 [ext_resource type="Script" uid="uid://cyk4slbxgxneg" path="res://Scripts/audio_trigger.gd" id="13_ovmki"]
 [ext_resource type="AudioStream" uid="uid://bqcjpt0pans7l" path="res://Audio/BGM/Casa Bossa Nova.mp3" id="14_ytvpe"]
-[ext_resource type="Script" uid="uid://23s7p8r3hfo1" path="res://Scripts/stop_audio_trigger.gd" id="15_ytvpe"]
+[ext_resource type="AudioStream" uid="uid://dvyccn3h7dyev" path="res://Audio/BGS/office_ambiance.ogg" id="15_ytvpe"]
 [ext_resource type="Material" uid="uid://bbdf6rh5krq1i" path="res://Materials/indoor_floor_material.tres" id="16_yomwg"]
 [ext_resource type="Texture2D" uid="uid://drftuff43jrfp" path="res://Images/Props/Level4/template.jpg" id="17_dvx4j"]
 [ext_resource type="PackedScene" uid="uid://bqhkso25gpyxr" path="res://Nodes/Props/Level4/bebedouro.tscn" id="18_3lnkb"]
@@ -121,16 +121,18 @@ shape = SubResource("ConcavePolygonShape3D_w1vqu")
 [node name="BGMTrigger" type="Node" parent="Triggers" unique_id=1142649435]
 script = ExtResource("13_ovmki")
 stream = ExtResource("14_ytvpe")
+volume_db = -13.0
 trigger_type = 1
 destroy_after_trigger = true
 metadata/_custom_type_script = "uid://cyk4slbxgxneg"
 
-[node name="StopBGSTrigger" type="Node" parent="Triggers" unique_id=1683420910]
-script = ExtResource("15_ytvpe")
-stop_bgs = true
+[node name="BGSTrigger" type="Node" parent="Triggers" unique_id=95346174]
+script = ExtResource("13_ovmki")
+audio_player_type = 1
+stream = ExtResource("15_ytvpe")
 trigger_type = 1
 destroy_after_trigger = true
-metadata/_custom_type_script = "uid://23s7p8r3hfo1"
+metadata/_custom_type_script = "uid://cyk4slbxgxneg"
 
 [node name="TVEventTrigger" parent="Triggers" unique_id=294610580 instance=ExtResource("11_7q282")]
 transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -1.639, 0.627, 0.047)

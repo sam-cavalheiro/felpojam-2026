@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cwl5qim0sstnk" path="res://Nodes/Pickups/stamp_pickup_1.tscn" id="17_lxy1u"]
 [ext_resource type="Script" uid="uid://cyk4slbxgxneg" path="res://Scripts/audio_trigger.gd" id="17_ph1mv"]
 [ext_resource type="PackedScene" uid="uid://bsvmpbllqfnff" path="res://Nodes/Pickups/stamp_pickup_2.tscn" id="18_5eqyc"]
-[ext_resource type="Script" uid="uid://23s7p8r3hfo1" path="res://Scripts/stop_audio_trigger.gd" id="18_pcunm"]
+[ext_resource type="AudioStream" uid="uid://dvyccn3h7dyev" path="res://Audio/BGS/office_ambiance.ogg" id="18_pcunm"]
 [ext_resource type="AudioStream" uid="uid://bqcjpt0pans7l" path="res://Audio/BGM/Casa Bossa Nova.mp3" id="18_v2eyj"]
 [ext_resource type="PackedScene" uid="uid://b063mceeip86h" path="res://Nodes/Pickups/stamp_pickup_3.tscn" id="19_ph1mv"]
 [ext_resource type="PackedScene" uid="uid://dwlpkiqgurvea" path="res://Nodes/Pickups/stamp_pickup_4.tscn" id="20_v2eyj"]
@@ -169,16 +169,18 @@ shape = SubResource("BoxShape3D_hqawa")
 [node name="BGMTrigger" type="Node" parent="Triggers" unique_id=158313184]
 script = ExtResource("17_ph1mv")
 stream = ExtResource("18_v2eyj")
+volume_db = -13.0
 trigger_type = 1
 destroy_after_trigger = true
 metadata/_custom_type_script = "uid://cyk4slbxgxneg"
 
-[node name="StopBGSTrigger" type="Node" parent="Triggers" unique_id=55165877]
-script = ExtResource("18_pcunm")
-stop_bgs = true
+[node name="BGSTrigger" type="Node" parent="Triggers" unique_id=189604930]
+script = ExtResource("17_ph1mv")
+audio_player_type = 1
+stream = ExtResource("18_pcunm")
 trigger_type = 1
 destroy_after_trigger = true
-metadata/_custom_type_script = "uid://23s7p8r3hfo1"
+metadata/_custom_type_script = "uid://cyk4slbxgxneg"
 
 [node name="TVEventTrigger" parent="Triggers" unique_id=294610580 instance=ExtResource("12_0etwl")]
 transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -1.163727, 0.5841709, 0.8860234)
