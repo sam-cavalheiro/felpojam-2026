@@ -8,9 +8,9 @@
 [node name="AudioManager" type="Node" unique_id=293553884]
 process_mode = 3
 
-[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=461197481]
-position = Vector2(576, 324)
-current = true
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=1514431165]
+
+[node name="BGSPlayer" type="AudioStreamPlayer" parent="." unique_id=1199310533]
 
 [node name="Audios" type="Node" parent="." unique_id=375828689]
 
@@ -29,3 +29,7 @@ stream = ExtResource("3_v0ohe")
 
 [node name="StampPickupSE" type="AudioStreamPlayer" parent="Audios" unique_id=207854610]
 stream = ExtResource("4_bw1kx")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=461197481]
+position = Vector2(576, 324)
+current = true
