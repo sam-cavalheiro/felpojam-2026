@@ -18,7 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://t3kf4w4i18ku" path="res://Nodes/Pickups/stamp_pickup_0.tscn" id="16_4b3sa"]
 [ext_resource type="Material" uid="uid://bbdf6rh5krq1i" path="res://Materials/indoor_floor_material.tres" id="16_lxy1u"]
 [ext_resource type="PackedScene" uid="uid://cwl5qim0sstnk" path="res://Nodes/Pickups/stamp_pickup_1.tscn" id="17_lxy1u"]
+[ext_resource type="Script" uid="uid://cyk4slbxgxneg" path="res://Scripts/audio_trigger.gd" id="17_ph1mv"]
 [ext_resource type="PackedScene" uid="uid://bsvmpbllqfnff" path="res://Nodes/Pickups/stamp_pickup_2.tscn" id="18_5eqyc"]
+[ext_resource type="Script" uid="uid://23s7p8r3hfo1" path="res://Scripts/stop_audio_trigger.gd" id="18_pcunm"]
+[ext_resource type="AudioStream" uid="uid://bqcjpt0pans7l" path="res://Audio/BGM/Casa Bossa Nova.mp3" id="18_v2eyj"]
 [ext_resource type="PackedScene" uid="uid://b063mceeip86h" path="res://Nodes/Pickups/stamp_pickup_3.tscn" id="19_ph1mv"]
 [ext_resource type="PackedScene" uid="uid://dwlpkiqgurvea" path="res://Nodes/Pickups/stamp_pickup_4.tscn" id="20_v2eyj"]
 [ext_resource type="PackedScene" uid="uid://dh2qx7eugcduc" path="res://Nodes/Pickups/stamp_pickup_5.tscn" id="21_pcunm"]
@@ -129,9 +132,6 @@ transform = Transform3D(0.10654757, 0, -0.03112239, 0, 0.11099999, 0, 0.03112238
 [node name="TapeteElevador" parent="Props" unique_id=717624540 instance=ExtResource("11_or01u")]
 transform = Transform3D(0.10653839, 0.031154005, 1.3617848e-09, 0, -4.851964e-09, 0.111, 0.031154005, -0.10653839, -4.656941e-09, 1.9550458, 1.1920929e-07, 0.4796753)
 
-[node name="TVEventTrigger" parent="Props" unique_id=294610580 instance=ExtResource("12_0etwl")]
-transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -1.163727, 0.5841709, 0.8860234)
-
 [node name="QuadroA" parent="Props" unique_id=2130869082 instance=ExtResource("14_vo0tk")]
 transform = Transform3D(0.10653839, 0, -0.031154001, 0, 0.111, 0, 0.031154001, 0, 0.10653839, 2.7635472, 0.5096165, 0.6252621)
 
@@ -164,32 +164,51 @@ shape = SubResource("BoxShape3D_hqawa")
 transform = Transform3D(0.80635166, 0, 0.5914363, 0, 1, 0, -0.5914363, 0, 0.80635166, 6.196186, 0, 4.1921124)
 shape = SubResource("BoxShape3D_hqawa")
 
-[node name="StampPickup0" parent="." unique_id=1413452511 instance=ExtResource("16_4b3sa")]
+[node name="Triggers" type="Node3D" parent="." unique_id=1630016005]
+
+[node name="BGMTrigger" type="Node" parent="Triggers" unique_id=158313184]
+script = ExtResource("17_ph1mv")
+stream = ExtResource("18_v2eyj")
+trigger_type = 1
+destroy_after_trigger = true
+metadata/_custom_type_script = "uid://cyk4slbxgxneg"
+
+[node name="StopBGSTrigger" type="Node" parent="Triggers" unique_id=55165877]
+script = ExtResource("18_pcunm")
+stop_bgs = true
+trigger_type = 1
+destroy_after_trigger = true
+metadata/_custom_type_script = "uid://23s7p8r3hfo1"
+
+[node name="TVEventTrigger" parent="Triggers" unique_id=294610580 instance=ExtResource("12_0etwl")]
+transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -1.163727, 0.5841709, 0.8860234)
+
+[node name="StampPickup0" parent="Triggers" unique_id=1413452511 instance=ExtResource("16_4b3sa")]
 transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.82457525, 0.14532101, 1.0295807)
 
-[node name="StampPickup1" parent="." unique_id=1122972821 instance=ExtResource("17_lxy1u")]
+[node name="StampPickup1" parent="Triggers" unique_id=1122972821 instance=ExtResource("17_lxy1u")]
 transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 1.5395823, 0.14532107, 1.2059793)
 
-[node name="StampPickup2" parent="." unique_id=1221614792 instance=ExtResource("18_5eqyc")]
+[node name="StampPickup2" parent="Triggers" unique_id=1221614792 instance=ExtResource("18_5eqyc")]
 transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 1.2269878, 0.14532107, 1.6101035)
 
-[node name="StampPickup3" parent="." unique_id=1233178507 instance=ExtResource("19_ph1mv")]
+[node name="StampPickup3" parent="Triggers" unique_id=1233178507 instance=ExtResource("19_ph1mv")]
 transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.53106195, 0.14532107, 1.5293772)
 
-[node name="StampPickup4" parent="." unique_id=1103314064 instance=ExtResource("20_v2eyj")]
+[node name="StampPickup4" parent="Triggers" unique_id=1103314064 instance=ExtResource("20_v2eyj")]
 transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.93197334, 0.14532107, 1.5743749)
 
-[node name="StampPickup5" parent="." unique_id=1280633073 instance=ExtResource("21_pcunm")]
+[node name="StampPickup5" parent="Triggers" unique_id=1280633073 instance=ExtResource("21_pcunm")]
 transform = Transform3D(0.026, 0, 0, 0, 0.0124061275, 0.022849247, 0, -0.022849247, 0.0124061275, 0.8814939, 0.14532107, 1.2715418)
 
-[node name="LawTrigger" parent="." unique_id=1916224518 instance=ExtResource("22_md78w")]
+[node name="LawTrigger" parent="Triggers" unique_id=1916224518 instance=ExtResource("22_md78w")]
 transform = Transform3D(0.111, 0, 0, 0, 0.052964624, 0.0975487, 0, -0.0975487, 0.052964624, 0.30773205, 0.04289432, 0.9628674)
 
-[node name="EmbromationExit" type="Area3D" parent="." unique_id=46853120]
+[node name="EmbromationExit" type="Area3D" parent="Triggers" unique_id=46853120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.071516, 0, 0.36034137)
 script = SubResource("GDScript_4b3sa")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EmbromationExit" unique_id=170282091]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/EmbromationExit" unique_id=170282091]
 shape = SubResource("SphereShape3D_lxy1u")
 
-[connection signal="body_entered" from="EmbromationExit" to="EmbromationExit" method="_on_body_entered"]
+[connection signal="body_entered" from="Triggers/EmbromationExit" to="Triggers/EmbromationExit" method="_on_body_entered"]

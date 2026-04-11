@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bvxd437xmalyc" path="res://Nodes/Props/elevador.tscn" id="10_wu4e6"]
 [ext_resource type="PackedScene" uid="uid://dvgrlxu0850fa" path="res://Nodes/Triggers/tv_event_trigger.tscn" id="11_7q282"]
 [ext_resource type="PackedScene" uid="uid://dkewglwjofnbm" path="res://Nodes/Props/tapete_elevador.tscn" id="11_qqatm"]
+[ext_resource type="Script" uid="uid://cyk4slbxgxneg" path="res://Scripts/audio_trigger.gd" id="13_ovmki"]
+[ext_resource type="AudioStream" uid="uid://bqcjpt0pans7l" path="res://Audio/BGM/Casa Bossa Nova.mp3" id="14_ytvpe"]
+[ext_resource type="Script" uid="uid://23s7p8r3hfo1" path="res://Scripts/stop_audio_trigger.gd" id="15_ytvpe"]
 [ext_resource type="Material" uid="uid://bbdf6rh5krq1i" path="res://Materials/indoor_floor_material.tres" id="16_yomwg"]
 [ext_resource type="Texture2D" uid="uid://drftuff43jrfp" path="res://Images/Props/Level4/template.jpg" id="17_dvx4j"]
 [ext_resource type="PackedScene" uid="uid://bqhkso25gpyxr" path="res://Nodes/Props/Level4/bebedouro.tscn" id="18_3lnkb"]
@@ -101,12 +104,6 @@ transform = Transform3D(0.107303515, 0, -0.028406914, 0, 0.11099998, 0, 0.028406
 [node name="TapeteElevador" parent="Props" unique_id=526409710 instance=ExtResource("11_qqatm")]
 transform = Transform3D(0.107317396, 0.02835448, 1.2394138e-09, 0, -4.851964e-09, 0.111, 0.02835448, -0.107317396, -4.6909925e-09, 0.75793135, 0.0027993023, -0.87512696)
 
-[node name="TVEventTrigger" parent="Props" unique_id=294610580 instance=ExtResource("11_7q282")]
-transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -1.639, 0.627, 0.047)
-
-[node name="TVEventTrigger2" parent="Props" unique_id=1385267839 instance=ExtResource("11_7q282")]
-transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -0.43840706, 0.627, -0.6324244)
-
 [node name="Paredes" type="StaticBody3D" parent="." unique_id=1602656448]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes" unique_id=1065775145]
@@ -119,4 +116,24 @@ surface_material_override/1 = ExtResource("16_yomwg")
 transform = Transform3D(1.73, 0, 0, 0, 1.73, 0, 0, 0, 1.73, -0.016, 1.6780118, 0.01)
 shape = SubResource("ConcavePolygonShape3D_w1vqu")
 
-[node name="PopupMenu" type="PopupMenu" parent="." unique_id=300419713]
+[node name="Triggers" type="Node3D" parent="." unique_id=1069424613]
+
+[node name="BGMTrigger" type="Node" parent="Triggers" unique_id=1142649435]
+script = ExtResource("13_ovmki")
+stream = ExtResource("14_ytvpe")
+trigger_type = 1
+destroy_after_trigger = true
+metadata/_custom_type_script = "uid://cyk4slbxgxneg"
+
+[node name="StopBGSTrigger" type="Node" parent="Triggers" unique_id=1683420910]
+script = ExtResource("15_ytvpe")
+stop_bgs = true
+trigger_type = 1
+destroy_after_trigger = true
+metadata/_custom_type_script = "uid://23s7p8r3hfo1"
+
+[node name="TVEventTrigger" parent="Triggers" unique_id=294610580 instance=ExtResource("11_7q282")]
+transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -1.639, 0.627, 0.047)
+
+[node name="TVEventTrigger2" parent="Triggers" unique_id=1385267839 instance=ExtResource("11_7q282")]
+transform = Transform3D(0.101, 0, 0, 0, 0.048193038, 0.08876053, 0, -0.08876053, 0.048193038, -0.43840706, 0.627, -0.6324244)

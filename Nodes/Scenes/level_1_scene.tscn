@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://05gp78i0ibqj" path="res://Nodes/Props/Level1/arbusto_b.tscn" id="16_b75lc"]
 [ext_resource type="PackedScene" uid="uid://ccg1r5vucecya" path="res://Nodes/Props/Level1/arvore_topo.tscn" id="17_v7cvq"]
 [ext_resource type="Script" uid="uid://cnuv8qg8iokam" path="res://Scripts/teleport_trigger.gd" id="19_ew023"]
+[ext_resource type="Script" uid="uid://cyk4slbxgxneg" path="res://Scripts/audio_trigger.gd" id="19_vfken"]
+[ext_resource type="AudioStream" uid="uid://e7xjj34rv2xs" path="res://Audio/BGS/street_ambiance.ogg" id="20_36iw2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ue6s0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -223,24 +225,34 @@ shape = SubResource("BoxShape3D_vfken")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.727977, 2.3841858e-07, 4.647273)
 shape = SubResource("BoxShape3D_36iw2")
 
-[node name="TeleporTrigger" type="Area3D" parent="." unique_id=1679163945]
+[node name="Triggers" type="Node3D" parent="." unique_id=725581237]
+
+[node name="BGSTrigger" type="Node" parent="Triggers" unique_id=742506528]
+script = ExtResource("19_vfken")
+audio_player_type = 1
+stream = ExtResource("20_36iw2")
+trigger_type = 1
+destroy_after_trigger = true
+metadata/_custom_type_script = "uid://cyk4slbxgxneg"
+
+[node name="TeleportTrigger" type="Area3D" parent="Triggers" unique_id=1679163945]
 script = ExtResource("19_ew023")
 map = "uid://dilk6llrogdp7"
 metadata/_custom_type_script = "uid://cnuv8qg8iokam"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporTrigger" unique_id=250163906]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/TeleportTrigger" unique_id=250163906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18567455, 0.36480713, 2.3842568)
 shape = SubResource("BoxShape3D_vx1w8")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="TeleporTrigger" unique_id=1706890875]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Triggers/TeleportTrigger" unique_id=1706890875]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6216629, 0.36480713, -1.0441289)
 shape = SubResource("BoxShape3D_vx1w8")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="TeleporTrigger" unique_id=1568739371]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Triggers/TeleportTrigger" unique_id=1568739371]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.0602973, 0.36480713, -0.84704065)
 shape = SubResource("BoxShape3D_vx1w8")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="TeleporTrigger" unique_id=1011075389]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Triggers/TeleportTrigger" unique_id=1011075389]
 transform = Transform3D(0.9659258, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.9659258, 0.8369889, 0.36480713, -2.640101)
 shape = SubResource("BoxShape3D_vx1w8")
 
