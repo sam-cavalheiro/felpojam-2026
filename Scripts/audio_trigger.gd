@@ -6,7 +6,8 @@ enum AudioPlayerType { BGM, BGS }
 
 @export var audio_player_type: AudioPlayerType = AudioPlayerType.BGM
 @export var stream: AudioStream
-@export_range(-80, 24, 1.0, "sufix:dB") var volume_db: float = 0.0
+@export_range(0.0, 4096.0, 0.1, "or_greater", "suffix:s") var play_start_position: float = 0.0
+@export_range(-80, 24, 1.0, "suffix:dB") var volume_db: float = 0.0
 @export_range(0.01, 4.0, 0.1, "or_greater") var pitch_scale: float = 1.0
 @export var mix_target: = AudioStreamPlayer.MixTarget.MIX_TARGET_STEREO
 @export var max_polyphony: int = 1
@@ -24,4 +25,4 @@ func on_trigger() -> void:
 	
 	if audio_player.stream != stream || !audio_player.playing:
 		audio_player.stream = stream
-		audio_player.play()
+		audio_player.play(play_start_position)

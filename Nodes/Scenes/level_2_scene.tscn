@@ -250,6 +250,7 @@ shape = SubResource("BoxShape3D_6gc6d")
 script = ExtResource("21_6gc6d")
 audio_player_type = 1
 stream = ExtResource("22_upmo1")
+play_start_position = 85.0
 trigger_type = 1
 destroy_after_trigger = true
 metadata/_custom_type_script = "uid://cyk4slbxgxneg"
