@@ -22,6 +22,6 @@ func on_trigger() -> void:
 	audio_player.mix_target = mix_target
 	audio_player.max_polyphony = max_polyphony
 	
-	if audio_player.stream != stream:
+	if audio_player.stream != stream || !audio_player.playing:
 		audio_player.stream = stream
 		audio_player.play()
