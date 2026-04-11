@@ -3,7 +3,9 @@ extends Button
 
 @export var start_focused: bool = false
 ## Não realizar ações de foco até que o foco tenha ocorrido uma vez.
-## Recomendado caso esse botão já inicie focado.
+## Recomendado caso esse botão já inicie focado, também é possível
+## reativar esta booleana caso alguma troca de fluxo de tela foque
+## neste botão.
 @export var focus_flag_toggle: bool = false
 
 # Called when the node enters the scene tree for the first time.
