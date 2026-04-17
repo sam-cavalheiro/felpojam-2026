@@ -31,4 +31,3 @@ func switch_stamp(equip_index: int) -> void:
 		current_equip_index = equip_index
 		current_stamp_texture = stamp_marks[collected_stamps[equip_index]]
 		stamps_hud.equip_stamp(equip_index)
-		print("current_equip_index = " + str(current_equip_index))
