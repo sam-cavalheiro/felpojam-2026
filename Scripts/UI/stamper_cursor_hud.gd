@@ -28,7 +28,7 @@ func setup_and_show(interactible_buttons: Array[BaseButton], stamp_marks: Array[
 	for child in $StampMark_Holder.get_children():
 		child.queue_free()
 	for stamp_position in stamp_marks:
-		stamp_mark(stamp_position.stamp_id, stamp_position.stamp_position, false)
+		unsafe_stamp_mark(stamp_position.stamp_id, stamp_position.stamp_position)
 	
 	show()
 
@@ -40,15 +40,23 @@ func _process(delta: float) -> void:
 	
 	if input_dir:
 		stamp_cursor.global_position += input_dir * cursor_move_speed
+		
+		var screen_size: Vector2 = get_viewport_rect().size
+		
+		stamp_cursor.global_position.x = clampf(stamp_cursor.global_position.x, \
+												-stamp_cursor.pivot_offset.x, \
+												screen_size.x - stamp_cursor.pivot_offset.x)
+		stamp_cursor.global_position.y = clampf(stamp_cursor.global_position.y, \
+												-stamp_cursor.pivot_offset.y, \
+												screen_size.y - stamp_cursor.pivot_offset.y)
+		
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if disabled_interaction:
 		return
 	
-	is_cursor_near_any_button = false
-	
-	if !button_process(interactible_buttons):
-		button_process(pinned_interactible_buttons)
+	is_cursor_near_any_button = button_process(interactible_buttons)
+	if !is_cursor_near_any_button: is_cursor_near_any_button = button_process(pinned_interactible_buttons)
 
 func _input(event: InputEvent) -> void:
 	if !is_visible_in_tree():
@@ -64,7 +72,6 @@ func button_process(buttons: Array[BaseButton]) -> bool:
 	for button in buttons:
 		if stamp_cursor_click_area.get_global_rect().intersects(button.get_global_rect()):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			is_cursor_near_any_button = true
 			
 			if Input.is_action_just_pressed("interact"):
 				if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -78,28 +85,30 @@ func button_process(buttons: Array[BaseButton]) -> bool:
 	return false
 
 # Retorna true se conseguiu carimbar
-func stamp_mark(stamp_id: int, stamp_position: Vector2, play_se: = true) -> bool:
-	if stamp_id < 0:
+func stamp_mark(stamp_id: int, stamp_position: Vector2) -> bool:
+	if is_cursor_near_any_button || stamp_id < 0:
 		return false
 	
-	var mark_inst: TextureRect = stamp_mark_loaded.instantiate()
-	$StampMark_Holder.add_child(mark_inst)
-	mark_inst.texture = StampsManager.stamp_marks[stamp_id]
-	mark_inst.global_position = stamp_position
+	unsafe_stamp_mark(stamp_id, stamp_position)
 	
-	if play_se:
-		AudioManager.get_node("Audios/StampSE").position = stamp_position
-		AudioManager.get_node("Audios/StampSE").play()
+	AudioManager.get_node("Audios/StampSE").position = stamp_position
+	AudioManager.get_node("Audios/StampSE").play()
 	
 	return true
 
-func stamp_mark_at_cursor_with_current(play_se: = true) -> bool:
+func stamp_mark_at_cursor_with_current() -> bool:
 	if StampsManager.current_equip_index < 0:
 		return false
 	
 	return stamp_mark(StampsManager.collected_stamps[StampsManager.current_equip_index],
-					 get_cursor_mark_position(),
-					 play_se)
+					 get_cursor_mark_position())
+
+# Carimba sem checar condicionais e sem tocar som, feito apenas para carimbar
+func unsafe_stamp_mark(stamp_id: int, stamp_position: Vector2) -> void:
+	var mark_inst: TextureRect = stamp_mark_loaded.instantiate()
+	$StampMark_Holder.add_child(mark_inst)
+	mark_inst.texture = StampsManager.stamp_marks[stamp_id]
+	mark_inst.global_position = stamp_position
 
 func get_cursor_mark_position() -> Vector2:
 	return stamp_cursor.global_position + stamp_cursor.pivot_offset - (stamp_mark_size * 0.5)
