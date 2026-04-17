@@ -17,11 +17,12 @@ config/icon="uid://2aq65hdw4sle"
 
 [autoload]
 
+SceneManager="*uid://ckb6hbp5fnbdu"
+AudioManager="*uid://7x34q7wqqsxy"
+DebugShortcutHandler="uid://c6eav8jdgtj1n"
 LawsManager="*uid://by0wmqpcekv6g"
 StampsManager="*uid://ce1wl5ivxkpyp"
 TVEventManager="*uid://beklbc66uxx4l"
-CheatHandler="*uid://c6eav8jdgtj1n"
-AudioManager="*uid://7x34q7wqqsxy"
 
 [display]
 
