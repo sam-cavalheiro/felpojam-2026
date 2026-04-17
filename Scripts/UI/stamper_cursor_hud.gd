@@ -55,8 +55,8 @@ func _process(delta: float) -> void:
 	if disabled_interaction:
 		return
 	
-	is_cursor_near_any_button = button_process(interactible_buttons)
-	if !is_cursor_near_any_button: is_cursor_near_any_button = button_process(pinned_interactible_buttons)
+	button_process(interactible_buttons)
+	if !is_cursor_near_any_button: button_process(pinned_interactible_buttons)
 
 func _input(event: InputEvent) -> void:
 	if !is_visible_in_tree():
@@ -67,8 +67,7 @@ func _input(event: InputEvent) -> void:
 		if !is_cursor_near_any_button:
 			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
-# Retorna true se algum botão foi intersectado
-func button_process(buttons: Array[BaseButton]) -> bool:
+func button_process(buttons: Array[BaseButton]) -> void:
 	for button in buttons:
 		if stamp_cursor_click_area.get_global_rect().intersects(button.get_global_rect()):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -81,8 +80,9 @@ func button_process(buttons: Array[BaseButton]) -> bool:
 				else:
 					button.grab_focus(true)
 					button.pressed.emit()
-			return true
-	return false
+			is_cursor_near_any_button = true
+			return
+	is_cursor_near_any_button = false
 
 # Retorna true se conseguiu carimbar
 func stamp_mark(stamp_id: int, stamp_position: Vector2) -> bool:
