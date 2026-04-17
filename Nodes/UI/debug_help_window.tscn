@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cbw8o6fujrtp6"]
+
+[ext_resource type="Script" uid="uid://d1kxvqwdeimrn" path="res://Scripts/UI/debug_help_window.gd" id="1_s1mms"]
+[ext_resource type="Shortcut" uid="uid://cone2ur3q4uby" path="res://Shortcuts/back_shortcut.tres" id="2_78pgd"]
+
+[node name="DebugHelpWindow" type="Panel" unique_id=313401079]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -101.25
+offset_right = 245.0
+offset_bottom = 101.25
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s1mms")
+
+[node name="Label" type="Label" parent="." unique_id=1478102682]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -63.5
+offset_right = 224.0
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Utilize as seguintes teclas de atalho:
+
+* F1: Exibir ferramentas para o Modo de Desenvolvimento
+* F11: Reprodutor de sons
+* F12: Troca de cenas"
+
+[node name="Ok_Button" type="Button" parent="." unique_id=1206574268]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.5
+offset_top = -38.0
+offset_right = 36.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Ok"
+
+[node name="Close_Button" type="Button" parent="." unique_id=1032266128]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -27.0
+offset_bottom = 31.0
+grow_horizontal = 0
+shortcut = ExtResource("2_78pgd")
+text = "X"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Ok_Button" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="Close_Button" to="." method="_on_close_button_pressed"]

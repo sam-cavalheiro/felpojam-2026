@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 const FADEOUT_DURATION: float = 10.0
 
@@ -19,3 +19,9 @@ func _process(delta: float) -> void:
 
 func _on_wait_timer_timeout() -> void:
 	is_fading = true
+
+func _on_tools_button_pressed() -> void:
+	$"../../..".show_or_hide_help_window()
+
+func _on_close_button_pressed() -> void:
+	queue_free()

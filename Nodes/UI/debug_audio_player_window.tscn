@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://dqw3ct3fke7mu"]
+
+[ext_resource type="Script" uid="uid://eorj4r1tmf5g" path="res://Scripts/UI/debug_audio_player_window.gd" id="1_i3u6r"]
+[ext_resource type="Shortcut" uid="uid://cone2ur3q4uby" path="res://Shortcuts/back_shortcut.tres" id="2_aujfy"]
+
+[node name="DebugAudioPlayerWindow" type="PanelContainer" unique_id=313638819]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -227.0
+offset_right = 203.5
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3u6r")
+
+[node name="SEAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1599914958]
+
+[node name="StreamFile_FileDialog" type="FileDialog" parent="." unique_id=863654337]
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(0, 36)
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.mp3", "*.ogg", "*.wav")
+use_native_dialog = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1480103799]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=1996665444]
+layout_mode = 2
+
+[node name="TabBar" type="TabBar" parent="VBoxContainer/Header" unique_id=1617622988]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+tab_count = 3
+tab_0/title = "BGM"
+tab_0/tooltip = "Música de fundo"
+tab_1/title = "BGS"
+tab_1/tooltip = "Som de fundo"
+tab_2/title = "SE"
+tab_2/tooltip = "Efeito sonoro"
+
+[node name="Close_Button" type="Button" parent="VBoxContainer/Header" unique_id=103904581]
+layout_mode = 2
+size_flags_horizontal = 10
+shortcut = ExtResource("2_aujfy")
+text = "X"
+
+[node name="Stream" type="HBoxContainer" parent="VBoxContainer" unique_id=1991272488]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Stream" unique_id=2099872316]
+layout_mode = 2
+text = "Áudio"
+
+[node name="Stream_OptionButton" type="OptionButton" parent="VBoxContainer/Stream" unique_id=1625570176]
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "(Nenhum)"
+popup/item_0/id = 0
+
+[node name="StreamFile_Button" type="Button" parent="VBoxContainer/Stream" unique_id=1720328136]
+layout_mode = 2
+text = "Adicionar arquivo..."
+
+[node name="Volume" type="HBoxContainer" parent="VBoxContainer" unique_id=1350844659]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Volume" unique_id=241274888]
+layout_mode = 2
+text = "Volume dB"
+
+[node name="Volume_SpinBox" type="SpinBox" parent="VBoxContainer/Volume" unique_id=1189618386]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+min_value = -80.0
+max_value = 24.0
+step = 0.001
+suffix = "dB"
+
+[node name="Volume_Slider" type="HSlider" parent="VBoxContainer/Volume" unique_id=1899704125]
+custom_minimum_size = Vector2(155.105, 0)
+layout_mode = 2
+focus_mode = 1
+max_value = 1.0
+step = 0.01
+
+[node name="Pitch" type="HBoxContainer" parent="VBoxContainer" unique_id=527894517]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Pitch" unique_id=1824257997]
+layout_mode = 2
+text = "Pitch"
+
+[node name="Pitch_SpinBox" type="SpinBox" parent="VBoxContainer/Pitch" unique_id=138015803]
+layout_mode = 2
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 1.0
+allow_greater = true
+
+[node name="Pitch_Slider" type="HSlider" parent="VBoxContainer/Pitch" unique_id=1330936683]
+custom_minimum_size = Vector2(155.105, 0)
+layout_mode = 2
+focus_mode = 1
+max_value = 1.0
+step = 0.01
+allow_greater = true
+
+[node name="MixTarget" type="HBoxContainer" parent="VBoxContainer" unique_id=1421689481]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MixTarget" unique_id=106797070]
+layout_mode = 2
+text = "Alvo de Mix"
+
+[node name="MixTarget_OptionButton" type="OptionButton" parent="VBoxContainer/MixTarget" unique_id=529290551]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Stereo"
+popup/item_0/id = 0
+popup/item_1/text = "Surround"
+popup/item_1/id = 1
+popup/item_2/text = "Center"
+popup/item_2/id = 2
+
+[node name="Advanced_Foldable" type="FoldableContainer" parent="VBoxContainer" unique_id=841722840]
+layout_mode = 2
+folded = true
+title = "Avançado"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Advanced_Foldable" unique_id=878822648]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Advanced_Foldable/VBoxContainer" unique_id=1691319680]
+layout_mode = 2
+text = "Ainda não funciona!"
+horizontal_alignment = 1
+
+[node name="MaxPolyphony" type="HBoxContainer" parent="VBoxContainer/Advanced_Foldable/VBoxContainer" unique_id=1357002300]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/MaxPolyphony" unique_id=506485805]
+layout_mode = 2
+text = "Max Polyphony"
+
+[node name="MaxPolyphony_SpinBox" type="SpinBox" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/MaxPolyphony" unique_id=1860270316]
+layout_mode = 2
+min_value = -80.0
+max_value = 24.0
+allow_greater = true
+
+[node name="MaxPolyphony_Slider" type="HSlider" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/MaxPolyphony" unique_id=1963590904]
+custom_minimum_size = Vector2(155.105, 0)
+layout_mode = 2
+focus_mode = 1
+max_value = 1.0
+step = 0.01
+
+[node name="Bus" type="HBoxContainer" parent="VBoxContainer/Advanced_Foldable/VBoxContainer" unique_id=997629691]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/Bus" unique_id=1227392698]
+layout_mode = 2
+text = "Bus"
+
+[node name="Bus_SpinBox" type="SpinBox" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/Bus" unique_id=1554113247]
+layout_mode = 2
+min_value = -80.0
+max_value = 24.0
+allow_greater = true
+
+[node name="Bus_Slider" type="HSlider" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/Bus" unique_id=2072099571]
+custom_minimum_size = Vector2(155.105, 0)
+layout_mode = 2
+focus_mode = 1
+max_value = 1.0
+step = 0.01
+
+[node name="PlaybackType" type="HBoxContainer" parent="VBoxContainer/Advanced_Foldable/VBoxContainer" unique_id=628382363]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/PlaybackType" unique_id=455294870]
+layout_mode = 2
+text = "Playback Type"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Advanced_Foldable/VBoxContainer/PlaybackType" unique_id=779061184]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Default"
+popup/item_0/id = 0
+popup/item_1/text = "Stream"
+popup/item_1/id = 1
+popup/item_2/text = "Sample"
+popup/item_2/id = 2
+
+[node name="Buttons_VBox" type="VBoxContainer" parent="VBoxContainer" unique_id=1767309235]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Buttons_HBox" type="HBoxContainer" parent="VBoxContainer/Buttons_VBox" unique_id=1339068214]
+layout_mode = 2
+alignment = 1
+
+[node name="Play_Button" type="Button" parent="VBoxContainer/Buttons_VBox/Buttons_HBox" unique_id=1235576882]
+layout_mode = 2
+text = "▶ Tocar"
+
+[node name="Stop_Button" type="Button" parent="VBoxContainer/Buttons_VBox/Buttons_HBox" unique_id=845196300]
+layout_mode = 2
+text = "■ Parar"
+
+[node name="Default_Button" type="Button" parent="VBoxContainer/Buttons_VBox/Buttons_HBox" unique_id=1491836923]
+layout_mode = 2
+text = "↶ Restaurar"
+
+[node name="Close_Written_Button" type="Button" parent="VBoxContainer/Buttons_VBox" unique_id=318961782]
+layout_mode = 2
+text = "Fechar"
+
+[connection signal="file_selected" from="StreamFile_FileDialog" to="." method="_on_stream_file_file_dialog_file_selected"]
+[connection signal="tab_changed" from="VBoxContainer/Header/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="pressed" from="VBoxContainer/Header/Close_Button" to="." method="_on_close_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer/Stream/Stream_OptionButton" to="." method="_on_stream_option_button_item_selected"]
+[connection signal="pressed" from="VBoxContainer/Stream/StreamFile_Button" to="." method="_on_stream_file_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer/MixTarget/MixTarget_OptionButton" to="." method="_on_mix_target_option_button_item_selected"]
+[connection signal="pressed" from="VBoxContainer/Buttons_VBox/Buttons_HBox/Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons_VBox/Buttons_HBox/Stop_Button" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons_VBox/Buttons_HBox/Default_Button" to="." method="_on_default_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons_VBox/Close_Written_Button" to="." method="_on_close_written_button_pressed"]

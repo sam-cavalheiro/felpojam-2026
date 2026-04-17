@@ -3,6 +3,8 @@ class_name AudioTrigger
 
 enum AudioPlayerType { BGM, BGS }
 
+signal triggered_audio(audio_player_type: AudioPlayerType)
+
 
 @export var audio_player_type: AudioPlayerType = AudioPlayerType.BGM
 @export var stream: AudioStream
@@ -26,3 +28,5 @@ func on_trigger() -> void:
 	if audio_player.stream != stream || !audio_player.playing:
 		audio_player.stream = stream
 		audio_player.play(play_start_position)
+	
+	triggered_audio.emit(audio_player_type)
