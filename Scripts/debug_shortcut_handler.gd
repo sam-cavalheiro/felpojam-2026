@@ -13,7 +13,7 @@ func _shortcut_input(event: InputEvent) -> void:
 			KEY_F1:
 				show_or_hide_help_window()
 			KEY_F11:
-				var debug_audio_player_window: DebugAudioPlayerWindow = $CanvasLayer/UI/DebugAudioPlayerWindow
+				var debug_audio_player_window: DebugAudioPlayerWindow = get_node_or_null("CanvasLayer/UI/DebugAudioPlayerWindow")
 				
 				if debug_audio_player_window:
 					debug_audio_player_window.visible = !debug_audio_player_window.visible
@@ -22,7 +22,7 @@ func _shortcut_input(event: InputEvent) -> void:
 					debug_audio_player_window = load_dapw.instantiate()
 					$CanvasLayer/UI.add_child(debug_audio_player_window)
 			KEY_F12:
-				var debug_scene_changer_window: DebugSceneChangerWindow = $CanvasLayer/UI/DebugSceneChangerWindow
+				var debug_scene_changer_window: DebugSceneChangerWindow = get_node_or_null("CanvasLayer/UI/DebugSceneChangerWindow")
 				
 				if debug_scene_changer_window:
 					debug_scene_changer_window.visible = !debug_scene_changer_window.visible
@@ -32,7 +32,7 @@ func _shortcut_input(event: InputEvent) -> void:
 					$CanvasLayer/UI.add_child(debug_scene_changer_window)
 
 func show_or_hide_help_window() -> void:
-	var debug_help_window: DebugHelpWindow = $CanvasLayer/UI/DebugHelpWindow
+	var debug_help_window: DebugHelpWindow = get_node_or_null("CanvasLayer/UI/DebugHelpWindow")
 	
 	if debug_help_window:
 		debug_help_window.visible = !debug_help_window.visible
