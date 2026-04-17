@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func on_body_entered(body: Node3D):
 	if body is Player:
-		get_tree().change_scene_to_file(map)
+		SceneManager.change_scene_to_file(map)

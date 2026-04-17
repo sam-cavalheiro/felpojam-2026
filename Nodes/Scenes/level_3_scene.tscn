@@ -66,7 +66,7 @@ func on_approve_law(law_id: int) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if can_end && body is Player:
-		get_tree().change_scene_to_file(\"res://Nodes/Scenes/end_scene.tscn\")
+		SceneManager.change_scene_to_file(\"res://Nodes/Scenes/end_scene.tscn\")
 "
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lxy1u"]
